@@ -1,22 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { SparePartCategory } from "@/lib/content";
+import SparePartsClosingCta from "@/components/spare-parts/SparePartsClosingCta";
+import { type SparePartCategory } from "@/lib/content";
+import { sectionBandClass } from "@/lib/cn";
 import Reveal from "@/components/ui/Reveal";
 
 type SparePartsCatalogProps = {
   categories: SparePartCategory[];
+  bandOffset?: number;
 };
 
-export default function SparePartsCatalog({ categories }: SparePartsCatalogProps) {
+export default function SparePartsCatalog({ categories, bandOffset = 0 }: SparePartsCatalogProps) {
   return (
     <div className="space-y-0">
       {categories.map((category, index) => (
         <section
           key={category.id}
           id={category.anchor}
-          className={`scroll-mt-24 border-b border-[var(--border)] section-pad ${
-            index % 2 === 0 ? "bg-white" : "section-surface"
-          }`}
+          className={`scroll-mt-24 border-b border-[var(--border)] section-pad ${sectionBandClass(bandOffset + index)}`}
         >
           <div className="container-content">
             <Reveal delay={index * 30}>
@@ -54,7 +55,7 @@ export default function SparePartsCatalog({ categories }: SparePartsCatalogProps
                       {category.images.map((image) => (
                         <figure
                           key={image.src}
-                          className="overflow-hidden rounded-md border border-[var(--border)] bg-[#f3f3f3]"
+                          className="interactive-media overflow-hidden rounded-xl border border-[var(--border)] bg-white motion-safe:transition-all motion-safe:duration-200"
                         >
                           <div className="relative aspect-[4/3]">
                             <Image
@@ -79,18 +80,10 @@ export default function SparePartsCatalog({ categories }: SparePartsCatalogProps
         </section>
       ))}
 
-      <section className="section-surface section-pad">
+      <section className={`border-b border-[var(--border)] section-pad ${sectionBandClass(bandOffset + categories.length)}`}>
         <Reveal>
-          <div className="container-content max-w-3xl text-center">
-            <p className="eyebrow">Not listed?</p>
-            <h2 className="text-2xl font-display sm:text-3xl">Send your part list — we source beyond this catalogue</h2>
-            <p className="mt-3 text-charcoal-muted">
-              Pneumatic manifolds, packing line parts, parboiling line consumables, and custom fabricated items are
-              quoted on request.
-            </p>
-            <Link href="/contact" className="btn btn-primary mt-8">
-              Request a spare parts quote
-            </Link>
+          <div className="container-content">
+            <SparePartsClosingCta />
           </div>
         </Reveal>
       </section>

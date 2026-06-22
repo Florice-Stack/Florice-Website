@@ -1,6 +1,7 @@
 import { heroScope } from "@/lib/content";
 import ConsultantHeroVideo from "@/components/home/ConsultantHeroVideo";
 import HeroContent from "@/components/home/HeroContent";
+import { heroScopeVisuals, SectionIcon } from "@/components/home/sectionVisuals";
 import Reveal from "@/components/ui/Reveal";
 
 export default function Hero() {
@@ -27,14 +28,19 @@ export default function Hero() {
 
       <div className="section-surface border-t border-[var(--border)]">
         <div className="container-content grid gap-0 divide-y divide-[var(--border)] sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
-          {heroScope.map((item, index) => (
-            <Reveal key={item.title} delay={index * 60} className="px-0 py-6 sm:px-6">
-              <div className="interactive-scope h-full rounded-lg px-2 py-1 motion-safe:transition-colors motion-safe:duration-200">
-                <h3 className="text-xs font-bold uppercase tracking-[0.14em] text-olive">{item.title}</h3>
-                <p className="mt-2 text-sm text-charcoal-muted">{item.description}</p>
-              </div>
-            </Reveal>
-          ))}
+          {heroScope.map((item, index) => {
+            const visual = heroScopeVisuals[item.title] ?? heroScopeVisuals["Project support"];
+
+            return (
+              <Reveal key={item.title} delay={index * 60} className="px-0 py-6 sm:px-6">
+                <div className="interactive-scope h-full rounded-lg px-2 py-1 motion-safe:transition-colors motion-safe:duration-200">
+                  <SectionIcon visual={visual} size="sm" />
+                  <h3 className="mt-3 text-xs font-bold uppercase tracking-[0.14em] text-olive">{item.title}</h3>
+                  <p className="mt-2 text-sm text-charcoal-muted">{item.description}</p>
+                </div>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

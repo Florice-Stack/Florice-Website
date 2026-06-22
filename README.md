@@ -57,6 +57,7 @@ Submissions are emailed to the address configured in Web3Forms.
 | `/` | Home |
 | `/services` | Services, industries, process |
 | `/spare-parts` | Spare parts catalogue & ordering |
+| `/spare-parts/quote` | Spare parts enquiry form |
 | `/milling-trains` | Rice & flour process trains (detailed) |
 | `/work` | Case studies, machinery |
 | `/about` | About, brochure, FAQ |

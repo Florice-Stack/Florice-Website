@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import RiceMillFlowDiagram from "@/components/diagrams/RiceMillFlowDiagram";
 import FlourMillFlowDiagram from "@/components/diagrams/FlourMillFlowDiagram";
+import MillingTrainsOverviewVisual from "@/components/milling-trains/MillingTrainsOverviewVisual";
 import TrainDetailSection from "@/components/milling-trains/TrainDetailSection";
 import Reveal from "@/components/ui/Reveal";
+import { sectionBandClass } from "@/lib/cn";
 import { flourMillingTrain, millingTrainsIntro, riceMillingTrain } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -15,50 +17,38 @@ export const metadata: Metadata = {
 export default function MillingTrainsPage() {
   return (
     <>
-      <section className="section-surface border-b border-[var(--border)] section-pad">
-        <div className="container-content max-w-3xl">
-          <Reveal>
-            <p className="eyebrow">Process overview</p>
-            <h1 className="text-4xl sm:text-5xl">{millingTrainsIntro.title}</h1>
-            <p className="mt-4 text-lg text-charcoal-muted">{millingTrainsIntro.description}</p>
-            <p className="mt-3 text-sm text-charcoal-muted">{millingTrainsIntro.note}</p>
-          </Reveal>
-
-          <Reveal delay={80}>
-            <nav
-              className="mt-8 flex flex-wrap gap-2"
-              aria-label="Jump to milling train sections"
-            >
-              <a
-                href="#rice-train"
-                className="rounded-full border border-[var(--border)] bg-white px-4 py-2 text-xs font-semibold text-charcoal-muted motion-safe:transition-colors hover:border-olive hover:text-olive"
-              >
-                Rice milling train
-              </a>
-              <a
-                href="#flour-train"
-                className="rounded-full border border-[var(--border)] bg-white px-4 py-2 text-xs font-semibold text-charcoal-muted motion-safe:transition-colors hover:border-olive hover:text-olive"
-              >
-                Flour milling train
-              </a>
-            </nav>
-          </Reveal>
+      <section className={`border-b border-[var(--border)] section-pad ${sectionBandClass(0)}`}>
+        <div className="container-content">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+            <Reveal>
+              <div className="max-w-xl text-left">
+                <p className="eyebrow">Process overview</p>
+                <h1 className="text-4xl sm:text-5xl">{millingTrainsIntro.title}</h1>
+                <p className="mt-4 text-lg text-charcoal-muted">{millingTrainsIntro.description}</p>
+              </div>
+            </Reveal>
+            <Reveal delay={80} className="min-w-0">
+              <MillingTrainsOverviewVisual />
+            </Reveal>
+          </div>
         </div>
       </section>
 
       <TrainDetailSection
         train={riceMillingTrain}
-        diagram={<RiceMillFlowDiagram variant="hero" />}
+        diagram={<RiceMillFlowDiagram variant="embedded" />}
         delay={0}
+        sectionClassName={sectionBandClass(1)}
       />
 
       <TrainDetailSection
         train={flourMillingTrain}
-        diagram={<FlourMillFlowDiagram variant="hero" />}
+        diagram={<FlourMillFlowDiagram variant="embedded" />}
         delay={0}
+        sectionClassName={sectionBandClass(2)}
       />
 
-      <section className="section-surface section-pad">
+      <section className={`section-pad ${sectionBandClass(3)}`}>
         <Reveal>
           <div className="container-content flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div className="max-w-2xl">
@@ -66,8 +56,8 @@ export default function MillingTrainsPage() {
                 Need a walk-through of your plant&apos;s train?
               </h2>
               <p className="mt-3 text-charcoal-muted">
-                Share your capacity, grain type, and which stage is causing recovery loss or downtime. We map your
-                actual layout against the train and propose a scoped assessment or troubleshooting visit.
+                Share capacity, grain type, and the stage costing you recovery or downtime — we&apos;ll map your layout
+                and propose a scoped visit.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">

@@ -14,7 +14,7 @@ type MillFlowTrainProps = {
   steps: FlowStep[];
   infrastructure: { label: string; icon: ReactNode }[];
   ariaLabel: string;
-  variant?: "default" | "hero";
+  variant?: "default" | "hero" | "embedded";
 };
 
 const stepIconSize = {
@@ -81,71 +81,111 @@ export default function MillFlowTrain({
   variant = "default",
 }: MillFlowTrainProps) {
   const isHero = variant === "hero";
+  const isEmbedded = variant === "embedded";
+  const compact = !isHero && !isEmbedded;
+
+  const stepGrid = (
+    <div
+      className={
+        isEmbedded
+          ? "relative grid grid-cols-2 gap-x-2 gap-y-5 sm:grid-cols-4 lg:grid-cols-7 lg:gap-x-1.5 lg:gap-y-0"
+          : "flex min-w-max items-start justify-center"
+      }
+    >
+      {isEmbedded ? (
+        <div
+          className="pointer-events-none absolute left-[10%] right-[10%] top-[1.85rem] hidden h-px bg-olive/20 lg:block"
+          aria-hidden
+        />
+      ) : null}
+      {steps.map((step, index) => {
+        const iconHeight = compact ? stepIconHeight.compact : stepIconHeight.default;
+
+        if (isEmbedded) {
+          return (
+            <div key={step.id} className="relative z-[1] flex flex-col items-center px-1">
+              <StepNode step={step} accent={accent} compact />
+            </div>
+          );
+        }
+
+        return (
+          <div key={step.id} className="flex items-start">
+            <StepNode step={step} accent={accent} compact={compact} />
+            {index < steps.length - 1 && (
+              <div className={`flex shrink-0 items-center self-start ${iconHeight}`}>
+                <ArrowConnector color={accent} />
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
 
   return (
     <div
       className={
-        isHero
+        isHero || isEmbedded
           ? "overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card"
           : "overflow-hidden rounded-md border border-[var(--border)] bg-white"
       }
       role="img"
       aria-label={ariaLabel}
     >
-      <div className="border-b border-[var(--border)] px-4 py-4 sm:px-6">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.16em]" style={{ color: accent }}>
-              {title}
-            </p>
-            <p className="mt-1 text-xs text-charcoal-muted sm:text-sm">{subtitle}</p>
-          </div>
-          <div className="flex items-center gap-1.5" aria-hidden>
-            {steps.map((step) => (
-              <span
-                key={step.id}
-                className="h-2.5 w-2.5 rounded-full ring-1 ring-white sm:h-3 sm:w-3"
-                style={{ backgroundColor: step.tone }}
-                title={step.label}
-              />
-            ))}
+      {!isEmbedded ? (
+        <div className="border-b border-[var(--border)] px-4 py-4 sm:px-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em]" style={{ color: accent }}>
+                {title}
+              </p>
+              <p className="mt-1 text-xs text-charcoal-muted sm:text-sm">{subtitle}</p>
+            </div>
+            <div className="flex items-center gap-1.5" aria-hidden>
+              {steps.map((step) => (
+                <span
+                  key={step.id}
+                  className="h-2.5 w-2.5 rounded-full ring-1 ring-white sm:h-3 sm:w-3"
+                  style={{ backgroundColor: step.tone }}
+                  title={step.label}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      ) : null}
 
-      <div className="overflow-x-auto px-4 py-6 sm:px-6">
-        <div className="flex min-w-max items-start justify-center">
-          {steps.map((step, index) => {
-            const compact = !isHero;
-            const iconHeight = compact ? stepIconHeight.compact : stepIconHeight.default;
+      <div className={isEmbedded ? "px-4 py-5 sm:px-6 sm:py-6" : "overflow-x-auto px-4 py-6 sm:px-6"}>
+        {stepGrid}
 
-            return (
-              <div key={step.id} className="flex items-start">
-                <StepNode step={step} accent={accent} compact={compact} />
-                {index < steps.length - 1 && (
-                  <div className={`flex shrink-0 items-center self-start ${iconHeight}`}>
-                    <ArrowConnector color={accent} />
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        <div
-          className="mx-auto mt-6 h-1.5 max-w-3xl rounded-full"
-          style={{
-            background: `linear-gradient(to right, ${steps.map((s) => s.tone).join(", ")})`,
-          }}
-          aria-hidden
-        />
+        {!isEmbedded ? (
+          <div
+            className="mx-auto mt-6 h-1.5 max-w-3xl rounded-full"
+            style={{
+              background: `linear-gradient(to right, ${steps.map((s) => s.tone).join(", ")})`,
+            }}
+            aria-hidden
+          />
+        ) : (
+          <div
+            className="mx-auto mt-5 h-1 max-w-full rounded-full opacity-80"
+            style={{
+              background: `linear-gradient(to right, ${steps.map((s) => s.tone).join(", ")})`,
+            }}
+            aria-hidden
+          />
+        )}
       </div>
 
       <div className="section-surface border-t border-[var(--border)] px-4 py-3 sm:px-6">
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
           {infrastructure.map((item) => (
             <div key={item.label} className="flex items-center gap-2 text-charcoal-muted">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm" style={{ color: accent }}>
+              <span
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm"
+                style={{ color: accent }}
+              >
                 {item.icon}
               </span>
               <span className="text-[10px] font-medium sm:text-xs">{item.label}</span>

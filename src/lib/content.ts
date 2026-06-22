@@ -9,11 +9,10 @@ export const site = {
 
 export const navLinks = [
   { href: "/services", label: "Services" },
-  { href: "/spare-parts", label: "Spare Parts" },
+  { href: "/spare-parts", label: "Machinery & Spare Parts" },
   { href: "/milling-trains", label: "Milling Trains" },
   { href: "/work", label: "Projects" },
   { href: "/about", label: "About & FAQ" },
-  { href: "/contact", label: "Contact" },
 ] as const;
 
 export type SparePartCategory = {
@@ -32,12 +31,100 @@ export type SparePartCategory = {
   }[];
 };
 
-export const sparePartsIntro = {
-  title: "Spare parts for rice mills, flour mills, and grain handling plants",
+export type MachineryProduct = {
+  id: string;
+  anchor: string;
+  title: string;
+  description: string;
+  tags: string[];
+  image: {
+    src: string;
+    alt: string;
+  };
+};
+
+export const machineryIntro = {
+  eyebrow: "Complete plant lines",
+  title: "Machinery for grain processing plants",
   description:
-    "Florice coordinates genuine and compatible spare parts for cleaning, milling, polishing, conveying, and aspiration equipment — matched to your machine make, capacity, and wear pattern.",
+    "Complete milling and specialty grain lines — specified, sourced, and commissioned to your capacity and product mix.",
+};
+
+export const machineryProducts: MachineryProduct[] = [
+  {
+    id: "flour-mill",
+    anchor: "flour-mill-machinery",
+    title: "Flour Mill Machinery",
+    description: "Roller flour mill plants — cleaning through bagging with consistent extraction.",
+    tags: ["Break-reduction milling", "Plansifter lines"],
+    image: {
+      src: "/machinery/plant-lines/flour-mill-machinery.png",
+      alt: "Roller flour mill system processing wheat into flour in an industrial milling plant",
+    },
+  },
+  {
+    id: "rice-mill",
+    anchor: "rice-mill-machinery",
+    title: "Rice Mill Machinery",
+    description: "Complete rice milling lines — cleaning, hulling, whitening, polishing, and grading.",
+    tags: ["Paddy to head rice", "Parboiling ready"],
+    image: {
+      src: "/machinery/plant-lines/rice-mill-machinery.png",
+      alt: "Industrial rice mill cleaning and grading machinery on a mill floor",
+    },
+  },
+  {
+    id: "pulse-plant",
+    anchor: "pulse-processing-plant",
+    title: "Pulse Processing Plant",
+    description: "Pulse de-husking, splitting, and grading lines sized for your throughput and variety.",
+    tags: ["Multi-pulse capable", "Silo integration"],
+    image: {
+      src: "/machinery/plant-lines/pulse-processing-plant.png",
+      alt: "Pulse processing plant with sorting machinery, silos, and processed lentils in bins",
+    },
+  },
+  {
+    id: "besan-plant",
+    anchor: "besan-plant",
+    title: "Besan Plant",
+    description: "Gram flour plants with precision milling, sifting, and dust-controlled bag-off.",
+    tags: ["Consistent particle size", "Food-grade design"],
+    image: {
+      src: "/machinery/plant-lines/besan-plant.png",
+      alt: "Besan grinding machine processing chickpeas into gram flour beside labeled sacks",
+    },
+  },
+  {
+    id: "dalia-machine",
+    anchor: "dalia-making-machine",
+    title: "Dalia Making Machine",
+    description: "Broken wheat (dalia) lines with cutting, tempering, and uniform grading stages.",
+    tags: ["Capacity matched", "Stainless build"],
+    image: {
+      src: "/machinery/plant-lines/dalia-making-machine.png",
+      alt: "Stainless steel dalia making machine discharging processed flakes into a collection bowl",
+    },
+  },
+  {
+    id: "energy-food",
+    anchor: "energy-food-plant",
+    title: "Energy Food Plant",
+    description: "Specialty grain and energy-food lines for blended, fortified, and ready-to-use products.",
+    tags: ["Multi-recipe staging", "Hygiene focused"],
+    image: {
+      src: "/machinery/plant-lines/energy-food-plant.png",
+      alt: "Stainless steel energy food processing line with hopper, conveyors, and status lights",
+    },
+  },
+];
+
+export const sparePartsIntro = {
+  title: "Machinery & spare parts for rice mills, flour mills, and grain processing plants",
+  description:
+    "Florice specifies and sources complete milling and processing lines — plus coordinates genuine spare parts for cleaning, milling, polishing, conveying, and aspiration equipment matched to your make, capacity, and wear pattern.",
   note:
-    "Send machine nameplate photos, part numbers where available, and quantity. We confirm fit, lead time, and alternates before you order.",
+    "For machinery projects, share capacity targets and product mix. For parts, send nameplate photos, part numbers, and quantity — we confirm fit and lead time before you order.",
 };
 
 export const sparePartsPrinciples = [
@@ -57,21 +144,6 @@ export const sparePartsPrinciples = [
       "Critical wear items — screens, rubber rolls, belts, and aspiration sleeves — prioritized to reduce unplanned downtime.",
   },
 ] as const;
-
-export const sparePartsConsumables = {
-  title: "Mill consumables & wear items",
-  description:
-    "High-turnover items that keep extraction stable and aspiration clean. Typical flour and rice mill consumables we coordinate:",
-  items: [
-    "Sifter cleaning pads and roll brushes",
-    "Perforated sheets and filter sleeves",
-    "Elevator buckets and rubber wedges",
-    "Rubber balls for plansifter cleaning",
-    "Bran sifter sieves and wire mesh decks",
-    "Timing belts, V-belts, and multi-ply elevator belts",
-    "Rubber sleeves, caps, and acrylic sight-glass fittings",
-  ],
-};
 
 export const sparePartsProcess = [
   {
@@ -95,6 +167,33 @@ export const sparePartsProcess = [
     description: "Optional on-site or remote guidance for critical fits — whitener screens, cam sets, roll gaps.",
   },
 ] as const;
+
+export const sparePartsQuoteIntro = {
+  title: "Request a machinery or spare parts quote",
+  description:
+    "Tell us what you need — a complete line, upgraded section, or individual parts. We confirm scope, fit, and send pricing with lead time before you order.",
+  responseNote:
+    "Attach layout sketches or nameplate photos when you can. Breakdown part enquiries and greenfield machinery projects are both welcome.",
+};
+
+export const sparePartsQuoteChecklist = [
+  "Machinery line type or spare part category",
+  "Target capacity (TPH) or machine manufacturer and model",
+  "Part description, part number, or scope of supply",
+  "Quantity required or project timeline",
+  "Whether this is a breakdown, planned shutdown, or greenfield project",
+];
+
+export const sparePartsClosingCta = {
+  eyebrow: "Get a quote",
+  title: "Need a complete line, spare parts, or something not listed?",
+  paragraphs: [
+    "Greenfield flour mills, rice and pulse lines, besan and dalia plants — we scope machinery with vendor-neutral specs and commissioning support.",
+    "For breakdowns, mark your enquiry urgent and include photos. We prioritize screens, belts, rubber rolls, and aspiration items that block production.",
+  ],
+  sparePartsButton: "Request machinery or parts quote",
+  consultingButton: "View consulting services",
+};
 
 export const sparePartsCategories: SparePartCategory[] = [
   {
@@ -172,6 +271,18 @@ export const sparePartsCategories: SparePartCategory[] = [
       "Grinding wheels — Ø450, Ø340, and Ø250 mm",
       "Rotor shafts, bush sets, and outlet rings",
     ],
+    images: [
+      {
+        src: "/spare-parts/whitener-grinding-wheels.png",
+        alt: "Whitener grinding wheels in 450 mm, 340 mm, and 250 mm diameters",
+        caption: "Grinding wheels — Ø450, Ø340, and Ø250 mm",
+      },
+      {
+        src: "/spare-parts/whitener-shafts-bush-outlet-ring.png",
+        alt: "Whitener rotor shafts, bush set, and stainless outlet ring",
+        caption: "Rotor shafts, bush sets, and outlet rings",
+      },
+    ],
   },
   {
     id: "polisher",
@@ -190,6 +301,18 @@ export const sparePartsCategories: SparePartCategory[] = [
       "Rotor shafts, eye bolts, nylock nuts, and timing belts",
       "Outlet rings (SS) and artificial bristle pipes",
     ],
+    images: [
+      {
+        src: "/spare-parts/polisher-cams-gears.png",
+        alt: "Polisher taper cam, straight cam, and cam hub gear set",
+        caption: "Taper and straight cams with cam teeth",
+      },
+      {
+        src: "/spare-parts/polisher-nuts-bristle-pipe.png",
+        alt: "Polisher nylock nuts, artificial bristle brushes, and mixing tube",
+        caption: "Eye bolts, nylock nuts, and artificial bristle pipes",
+      },
+    ],
   },
   {
     id: "paddy",
@@ -205,6 +328,18 @@ export const sparePartsCategories: SparePartCategory[] = [
       "Paddy plates and knife edge supporters",
       "Knife edge sets and classifier locks",
       "Manual slide gate parts and seals",
+    ],
+    images: [
+      {
+        src: "/spare-parts/paddy-knife-edge-plates.png",
+        alt: "Paddy separator knife edge plates and knife edge supporter assembly",
+        caption: "Paddy plates, knife edge sets, and classifier locks",
+      },
+      {
+        src: "/spare-parts/paddy-slide-gate-parts.png",
+        alt: "Manual slide gate rollers, seals, profiles, and mounting hardware",
+        caption: "Manual slide gate parts and seals",
+      },
     ],
   },
   {
@@ -223,6 +358,18 @@ export const sparePartsCategories: SparePartCategory[] = [
       "Screw conveyor and paddle shafts",
       "Husk pneumatic line wear parts",
     ],
+    images: [
+      {
+        src: "/spare-parts/husk-pneumatic-wear-parts.png",
+        alt: "Husk pneumatic line wear parts including flanges, elbows, and mounting hardware",
+        caption: "Husk pneumatic line wear parts",
+      },
+      {
+        src: "/spare-parts/huller-screw-paddle-shafts.png",
+        alt: "Huller screw conveyor auger and SS paddle shaft assemblies",
+        caption: "Screw conveyor and paddle shafts",
+      },
+    ],
   },
   {
     id: "flour-prep",
@@ -238,6 +385,18 @@ export const sparePartsCategories: SparePartCategory[] = [
       "Dampener beaters and rotor shafts",
       "Scourer outlet and wear liners",
       "Bran duster screens and beaters",
+    ],
+    images: [
+      {
+        src: "/spare-parts/scourer-dampener-beaters.png",
+        alt: "Scourer and dampener beater assemblies with rotor shafts",
+        caption: "Scourer beaters and dampener rotor shafts",
+      },
+      {
+        src: "/spare-parts/scourer-screens-paddle-shaft.png",
+        alt: "Scourer wire mesh screens and bran duster paddle shaft",
+        caption: "Scourer jackets, bran duster screens, and beaters",
+      },
     ],
   },
   {
@@ -257,6 +416,18 @@ export const sparePartsCategories: SparePartCategory[] = [
       "Rubber caps and acrylic sight-glass fittings",
       "SS pipe fittings for pneumatic and spout lines",
     ],
+    images: [
+      {
+        src: "/spare-parts/sifter-rubber-caps-sight-glass.png",
+        alt: "Aspiration rubber caps, sleeves, and acrylic sight-glass fittings",
+        caption: "Rubber caps and acrylic sight-glass fittings",
+      },
+      {
+        src: "/spare-parts/sifter-ss-pipe-fittings.png",
+        alt: "Stainless steel pipe fittings for pneumatic and spout lines",
+        caption: "SS pipe fittings for pneumatic and spout lines",
+      },
+    ],
   },
   {
     id: "conveying",
@@ -273,6 +444,18 @@ export const sparePartsCategories: SparePartCategory[] = [
       "Timing pulleys, timer belts, and general pulleys",
       "Screw conveyor paddles and trough liners",
       "Blowthrough airlocks and diverter wear parts",
+    ],
+    images: [
+      {
+        src: "/spare-parts/conveying-belts.png",
+        alt: "Elevator rubber belts, timing belts, and V-belt sections",
+        caption: "Rubber belts, multi-ply belts, and timing belts",
+      },
+      {
+        src: "/spare-parts/conveying-screw-auger.png",
+        alt: "Screw conveyor auger flight assembly in trough",
+        caption: "Screw conveyor paddles and trough liners",
+      },
     ],
   },
   {
@@ -291,15 +474,19 @@ export const sparePartsCategories: SparePartCategory[] = [
       "Magnet trap elements and inspection hatches",
       "General mill hardware and clamp sets",
     ],
+    images: [
+      {
+        src: "/spare-parts/general-mill-hardware.png",
+        alt: "General mill hardware including bolts, nuts, washers, and C-clamps",
+        caption: "General mill hardware and clamp sets",
+      },
+      {
+        src: "/spare-parts/general-cyclones-magnet-trap.png",
+        alt: "Stainless cyclone housings, magnet trap grate, and inspection hatch",
+        caption: "Aspiration cyclone internals, magnet traps, and inspection hatches",
+      },
+    ],
   },
-];
-
-export const sparePartsOrderChecklist = [
-  "Machine manufacturer and model (nameplate photo)",
-  "Part description or existing part number",
-  "Quantity required and urgency (planned shutdown vs breakdown)",
-  "TPH / TPD rating and product (raw rice, basmati, maida, atta, etc.)",
-  "Photos of worn part and mounting location",
 ];
 
 export type MillingTrainStepDetail = {
@@ -325,9 +512,7 @@ export type MillingTrainDetail = {
 export const millingTrainsIntro = {
   title: "Rice and flour milling trains — stage by stage",
   description:
-    "A milling train is the ordered sequence of machines from grain intake to finished product. Recovery, downtime, and power use are won or lost at every transfer point — not only at the whitener or break roll.",
-  note:
-    "Use the diagrams below as a map. Each stage includes typical equipment, what can go wrong in operating plants, and where Florice consulting is most often engaged.",
+    "Recovery and downtime are decided at every transfer point — not only at the whitener or break roll. Follow the diagrams and stage map for equipment and where we consult most often.",
 };
 
 export const riceMillingTrain: MillingTrainDetail = {
@@ -336,67 +521,66 @@ export const riceMillingTrain: MillingTrainDetail = {
   eyebrow: "Rice milling train",
   title: "From paddy intake to head rice bagging",
   overview:
-    "Rice milling converts paddy into head rice (whole kernels), brokens, and by-products such as bran and husk. The train must balance hulling efficiency, whitening degree, and broken percentage — especially when paddy variety or moisture changes between seasons.",
-  typicalPlants: "Raw rice, parboiled rice, and basmati lines from 2 TPH to 20+ TPH",
-  keyMetrics: ["Head rice %", "Broken %", "Degree of milling", "Whitener power draw"],
+    "Paddy becomes head rice, brokens, and by-products. Balance hulling, whitening, and broken % — especially when variety or moisture shifts between seasons.",
+  typicalPlants: "Raw, parboiled, and basmati lines · 2–20+ TPH",
+  keyMetrics: ["Head rice %", "Broken %", "Degree of milling", "Whitener power"],
   infrastructure:
-    "Aspiration, pneumatic lifts, and bucket elevators connect every stage. Blockages or wrong air volumes here often masquerade as whitener or grader problems.",
+    "Aspiration, pneumatic lifts, and elevators tie stages together. Air balance issues here often mimic whitener or grader faults.",
   steps: [
     {
       id: "intake",
       title: "Paddy intake",
       description:
-        "Paddy is received from field, drier, or parboiling line into silos or day bins. Moisture, variety, and foreign matter at intake set the ceiling for everything downstream.",
-      equipment: ["Intake pits", "Pre-hoppers", "Magnetic separators", "Weigh hoppers"],
-      consultingFocus: "Capacity matching, moisture tracking, and layout for even draw to the pre-cleaner.",
+        "Paddy from field, drier, or parboiling line into silos or day bins. Moisture, variety, and trash at intake cap downstream recovery.",
+      equipment: ["Intake pits", "Pre-hoppers", "Magnets"],
+      consultingFocus: "Capacity matching, moisture tracking, even draw to pre-clean.",
     },
     {
       id: "preclean",
       title: "Pre-clean",
       description:
-        "Large impurities — straw, stones, overs — are removed before de-stoning. A weak pre-clean overloads the huller and raises broken rice later.",
-      equipment: ["Vibrating screens", "Scourers", "Air aspirators", "Cyclone pre-cleaners"],
-      consultingFocus: "Screen aperture selection, aspiration balance, and feed rate stability.",
+        "Remove straw, stones, and overs before de-stoning. Weak pre-clean overloads the huller and raises brokens later.",
+      equipment: ["Vibrating screens", "Scourers", "Air aspirators"],
+      consultingFocus: "Screen aperture, aspiration balance, stable feed rate.",
     },
     {
       id: "destone",
       title: "De-stone",
       description:
-        "Gravity separation removes stones and heavy impurities similar in size to paddy. Stones in the huller cause roll damage and sudden downtime.",
-      equipment: ["Gravity selectors", "Destoners", "Indented cylinders (optional)"],
-      consultingFocus: "Air table tuning, deck angle, and bypass settings for mixed varieties.",
+        "Gravity separation for stones and heavy impurities. Stones in the huller damage rolls and cause sudden stops.",
+      equipment: ["Gravity selectors", "Destoners", "Indented cylinders"],
+      consultingFocus: "Air table tuning, deck angle, bypass for mixed varieties.",
     },
     {
       id: "hull",
       title: "Hull / shell",
       description:
-        "Rubber roll hullers or shellers remove the husk from brown rice. Roll gap, roll speed, and paddy moisture drive husk efficiency and crack rate.",
+        "Rubber roll hullers remove husk from brown rice. Roll gap, speed, and moisture drive efficiency and crack rate.",
       equipment: ["Rubber roll hullers", "Paddy separators", "Husk aspirators"],
-      consultingFocus: "Roll gap audits, separator efficiency, and husk pneumatic routing.",
+      consultingFocus: "Roll gap audits, separator efficiency, husk routing.",
     },
     {
       id: "whiten",
       title: "Whiten",
       description:
-        "Whiteners and polishers remove bran layers to reach the desired degree of milling. Over-whitening increases brokens; under-whitening leaves red streaks and lower market grade.",
-      equipment: ["Abrasive whiteners", "Friction polishers", "Silky polishers", "MM whiteners"],
-      consultingFocus: "Screen sizing, stone pressure, water mist settings, and multi-pass balance.",
+        "Whiteners remove bran to target degree of milling. Over-whitening raises brokens; under-whitening hurts grade.",
+      equipment: ["Abrasive whiteners", "Friction polishers", "Silky polishers"],
+      consultingFocus: "Screen sizing, stone pressure, water mist, multi-pass balance.",
     },
     {
       id: "grade",
       title: "Grade",
       description:
-        "Graders and sorters split head rice, brokens, and brewers rice. Length graders recover head rice trapped in broken streams.",
-      equipment: ["Plan sifters / graders", "Length graders", "Color sorters (optional)"],
-      consultingFocus: "Sieve selection, split ratios, and recovery of head rice from tail streams.",
+        "Split head rice, brokens, and brewers rice. Length graders recover head rice from broken streams.",
+      equipment: ["Plan sifters / graders", "Length graders", "Color sorters"],
+      consultingFocus: "Sieve selection, split ratios, tail-stream recovery.",
     },
     {
       id: "pack",
       title: "Bagging",
-      description:
-        "Finished rice is weighed, bagged, or loaded bulk. Metal detection and check-weighing protect brand reputation at dispatch.",
-      equipment: ["Bagging lines", "Gross weighers", "Metal detectors", "Bulk loadout"],
-      consultingFocus: "Line balancing with upstream capacity and dust control at pack-off.",
+      description: "Weigh, bag, or bulk load finished rice. Metal detection and check-weighing at dispatch.",
+      equipment: ["Bagging lines", "Weighers", "Metal detectors"],
+      consultingFocus: "Pack line balance with upstream capacity, dust control.",
     },
   ],
 };
@@ -407,67 +591,60 @@ export const flourMillingTrain: MillingTrainDetail = {
   eyebrow: "Wheat / flour milling train",
   title: "From wheat intake to flour bagging",
   overview:
-    "Wheat flour milling breaks endosperm away from bran through a series of break and reduction passes, with purifiers and plansifters separating middlings by particle size and ash. Ash drift and throughput imbalance are the usual signs of a train that needs review.",
-  typicalPlants: "Chakki-style to industrial roller mills from 20 TPD to 500+ TPD",
-  keyMetrics: ["Extraction %", "Maida ash", "Bran yield", "Sifter capacity utilization"],
+    "Break and reduction release endosperm from bran; purifiers and plansifters sort middlings by size and ash. Ash drift and sifter overload usually signal a train that needs review.",
+  typicalPlants: "Chakki to industrial roller mills · 20–500+ TPD",
+  keyMetrics: ["Extraction %", "Maida ash", "Bran yield", "Sifter utilization"],
   infrastructure:
-    "Plansifters, purifiers, and pneumatic conveying tie the break system together. Blockages on lift to the sifter floor are a common root cause of ash drift and reduced extraction.",
+    "Plansifters, purifiers, and pneumatic conveying link the break system. Lift blockages to the sifter floor often drive ash drift and low extraction.",
   steps: [
     {
       id: "intake",
       title: "Wheat intake",
-      description:
-        "Wheat enters from silos or road intake with moisture and protein that determine conditioning time and break behaviour.",
-      equipment: ["Intake pits", "Pre-cleaners", "Magnets", "Bulk silos"],
-      consultingFocus: "Variety segregation, moisture monitoring, and intake rate vs mill capacity.",
+      description: "Wheat from silos or road intake. Moisture and protein set conditioning time and break behaviour.",
+      equipment: ["Intake pits", "Pre-cleaners", "Magnets"],
+      consultingFocus: "Variety segregation, moisture monitoring, intake vs capacity.",
     },
     {
       id: "clean",
       title: "Clean",
-      description:
-        "Scouring and aspiration remove dust, stones, and other wheat. Clean wheat reduces wear on break rolls and improves sifter performance.",
-      equipment: ["Scourers", "Destoners", "Air locks", "Aspiration cyclones"],
-      consultingFocus: "Cleaning efficiency vs product loss, and cyclone sizing.",
+      description: "Scouring and aspiration remove dust and stones. Clean wheat cuts roll wear and helps sifter performance.",
+      equipment: ["Scourers", "Destoners", "Aspiration cyclones"],
+      consultingFocus: "Cleaning efficiency vs loss, cyclone sizing.",
     },
     {
       id: "condition",
       title: "Condition",
-      description:
-        "Water is added to toughen bran and soften endosperm before first break. Incorrect moisture causes poor release of flour in reduction passes.",
+      description: "Water toughens bran and softens endosperm before first break. Wrong moisture hurts flour release in reduction.",
       equipment: ["Dampeners", "Intensive dampeners", "Tempering bins"],
-      consultingFocus: "Tempering time/temperature curves for local wheat varieties.",
+      consultingFocus: "Tempering time and temperature for local varieties.",
     },
     {
       id: "break",
       title: "Break",
-      description:
-        "First and second break rolls open the wheat kernel. Roll corrugation, differential, and feed rate control how much endosperm is released without over-grinding bran.",
-      equipment: ["Break rolls (B1–B8)", "Scratch rolls", "Bran finishers", "Impact detachers"],
-      consultingFocus: "Roll settings, sifter load balance, and pneumatic choke points.",
+      description: "Break rolls open the kernel. Corrugation, differential, and feed rate control endosperm release without over-grinding bran.",
+      equipment: ["Break rolls (B1–B8)", "Scratch rolls", "Bran finishers"],
+      consultingFocus: "Roll settings, sifter load balance, pneumatic chokes.",
     },
     {
       id: "purify",
       title: "Purify",
-      description:
-        "Purifiers separate middlings by specific gravity and air flow, sending pure endosperm to reduction while returning bran-rich stock for re-milling.",
+      description: "Purifiers split middlings by gravity and air. Pure endosperm to reduction; bran-rich stock back for re-milling.",
       equipment: ["Purifiers", "Supersifters", "Centrifugal reels"],
-      consultingFocus: "Air volume per compartment, feed rate, and stock routing to reduction.",
+      consultingFocus: "Air per compartment, feed rate, stock routing.",
     },
     {
       id: "reduce",
       title: "Reduce",
-      description:
-        "Smooth reduction rolls grind released endosperm into flour. Multiple passages produce maida, atta, and suji streams with different ash targets.",
+      description: "Reduction rolls grind endosperm into flour. Multiple passages target maida, atta, and suji ash levels.",
       equipment: ["Reduction rolls", "Plansifters", "Bran dusters"],
-      consultingFocus: "Ash targets by stream, roll maintenance intervals, and sifter screen plans.",
+      consultingFocus: "Ash by stream, roll maintenance, screen plans.",
     },
     {
       id: "pack",
       title: "Bagging",
-      description:
-        "Flour is blended if required, treated for insects if needed, and packed for retail or bulk dispatch.",
-      equipment: ["Flour blenders", "Bagging machines", "Bulk tankers", "Magnet traps"],
-      consultingFocus: "Blend consistency, line sanitation, and matching pack line to mill output.",
+      description: "Blend, treat if needed, and pack for retail or bulk dispatch.",
+      equipment: ["Flour blenders", "Bagging machines", "Magnet traps"],
+      consultingFocus: "Blend consistency, sanitation, pack line vs mill output.",
     },
   ],
 };
@@ -487,7 +664,7 @@ export const heroScope = [
   },
   {
     title: "Project support",
-    description: "Layout design, spare parts sourcing, commissioning, troubleshooting",
+    description: "Layout design, machinery sourcing, spare parts, commissioning, troubleshooting",
   },
 ];
 
@@ -505,7 +682,7 @@ export const missionItems = [
   {
     title: "Build reliability",
     description:
-      "Vendor-neutral specs, commissioning oversight, and spare parts coordination you can run shift after shift.",
+      "Vendor-neutral specs, commissioning oversight, and machinery & spare parts coordination you can run shift after shift.",
   },
 ];
 

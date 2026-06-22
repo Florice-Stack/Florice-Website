@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { navLinks, site } from "@/lib/content";
+import FloriceLogo from "@/components/layout/FloriceLogo";
 import FooterLegalLinks from "@/components/layout/FooterLegalLinks";
+import { navLinks, site } from "@/lib/content";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -9,8 +10,7 @@ export default function Footer() {
     <footer className="bg-olive-accent text-white">
       <div className="container-content grid gap-10 py-14 md:grid-cols-3">
         <div>
-          <p className="font-display text-2xl font-bold">Florice</p>
-          <p className="mt-1 text-xs uppercase tracking-[0.14em] text-white/60">{site.tagline}</p>
+          <FloriceLogo variant="light" className="h-14 w-auto max-w-[220px]" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/75">{site.description}</p>
         </div>
         <nav aria-label="Footer navigation">

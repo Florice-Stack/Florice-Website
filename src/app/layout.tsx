@@ -24,6 +24,10 @@ export const metadata: Metadata = {
     template: `%s | Florice Milling`,
   },
   description: site.description,
+  icons: {
+    icon: "/brand/florice-mark.png",
+    apple: "/brand/florice-mark.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -37,7 +41,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           Skip to content
         </a>
         <Header />
-        <main id="main">{children}</main>
+        <main id="main" className="pt-[8.5rem]">
+          {children}
+        </main>
         <Footer />
         <MobileCtaBar />
       </body>
