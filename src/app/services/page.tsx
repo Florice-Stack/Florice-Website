@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <section className="border-b border-[var(--border)] bg-ivory-muted section-pad">
+      <section className="section-surface border-b border-[var(--border)] section-pad">
         <div className="container-content max-w-3xl">
           <p className="eyebrow">Consulting Services</p>
           <h1 className="text-4xl sm:text-5xl">Technical support for operating mills</h1>
@@ -25,7 +25,7 @@ export default function ServicesPage() {
       <section className="section-pad">
         <div className="container-content">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-            <h2 className="text-2xl font-serif">What we deliver</h2>
+            <h2 className="text-2xl font-display">What we deliver</h2>
             <Link href="/contact" className="text-sm font-semibold text-olive hover:text-olive-dark">
               Request scope review →
             </Link>
@@ -52,10 +52,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="section-pad bg-ivory-muted">
+      <section className="section-surface section-pad">
         <div className="container-content">
           <p className="eyebrow">Industries Served</p>
-          <h2 className="text-3xl font-serif">Where our consultants work most often</h2>
+          <h2 className="text-3xl font-display">Where our consultants work most often</h2>
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry) => (
               <article key={industry.title} className="card-surface">
@@ -71,7 +71,7 @@ export default function ServicesPage() {
       <section className="section-pad">
         <div className="container-content">
           <p className="eyebrow">How We Work</p>
-          <h2 className="text-3xl font-serif">Five stages from plant walk-through to stable shift production</h2>
+          <h2 className="text-3xl font-display">Five stages from plant walk-through to stable shift production</h2>
           <ol className="mt-10 grid gap-4 lg:grid-cols-5">
             {processSteps.map((step) => (
               <li key={step.step} className="card-surface">

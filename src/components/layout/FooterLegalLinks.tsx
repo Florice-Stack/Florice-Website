@@ -5,44 +5,43 @@ import LegalModal from "@/components/LegalModal";
 import { legalMeta, privacyPolicy, termsOfUse } from "@/lib/legal";
 
 export default function FooterLegalLinks() {
-  const [activeModal, setActiveModal] = useState<"privacy" | "terms" | null>(null);
+  const [openDoc, setOpenDoc] = useState<"privacy" | "terms" | null>(null);
 
   return (
     <>
       <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
         <button
           type="button"
-          onClick={() => setActiveModal("privacy")}
-          className="text-ivory/70 underline-offset-2 hover:text-ivory hover:underline"
+          onClick={() => setOpenDoc("privacy")}
+          className="text-white/60 underline-offset-2 hover:text-white hover:underline"
         >
           Privacy Policy
         </button>
-        <span className="text-ivory/40" aria-hidden>
+        <span className="text-white/30" aria-hidden>
           ·
         </span>
         <button
           type="button"
-          onClick={() => setActiveModal("terms")}
-          className="text-ivory/70 underline-offset-2 hover:text-ivory hover:underline"
+          onClick={() => setOpenDoc("terms")}
+          className="text-white/60 underline-offset-2 hover:text-white hover:underline"
         >
           Terms of Use
         </button>
       </div>
 
       <LegalModal
-        open={activeModal === "privacy"}
+        open={openDoc === "privacy"}
         title={legalMeta.privacy.title}
         effectiveDate={legalMeta.privacy.effectiveDate}
         sections={privacyPolicy}
-        onClose={() => setActiveModal(null)}
+        onClose={() => setOpenDoc(null)}
       />
-
       <LegalModal
-        open={activeModal === "terms"}
+        open={openDoc === "terms"}
         title={legalMeta.terms.title}
         effectiveDate={legalMeta.terms.effectiveDate}
         sections={termsOfUse}
-        onClose={() => setActiveModal(null)}
+        onClose={() => setOpenDoc(null)}
       />
     </>
   );

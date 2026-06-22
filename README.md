@@ -38,10 +38,17 @@ Repo: `Florice-Stack/Florice-Website`
 1. Sign up at [web3forms.com](https://web3forms.com) (free)
 2. Create a form → copy your **Access Key**
 3. Vercel → Project → **Settings → Environment Variables**
-4. Add `WEB3FORMS_ACCESS_KEY` = your key (Production, Preview, Development)
-5. **Redeploy** the project
+4. Add:
 
-Submissions are emailed to the address you configure in Web3Forms.
+| Key | Value |
+|-----|--------|
+| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | your Web3Forms access key |
+
+Enable for **Production**, **Preview**, and **Development**.
+
+5. **Redeploy** (required — this variable is baked in at build time)
+
+Submissions are emailed to the address configured in Web3Forms.
 
 ## Pages
 
@@ -49,6 +56,8 @@ Submissions are emailed to the address you configure in Web3Forms.
 |-------|---------|
 | `/` | Home |
 | `/services` | Services, industries, process |
+| `/spare-parts` | Spare parts catalogue & ordering |
+| `/milling-trains` | Rice & flour process trains (detailed) |
 | `/work` | Case studies, machinery |
 | `/about` | About, brochure, FAQ |
 | `/contact` | Consultation form |

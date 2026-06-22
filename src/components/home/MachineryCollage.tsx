@@ -3,21 +3,17 @@ import Image from "next/image";
 export default function MachineryCollage() {
   return (
     <figure className="w-full">
-      <p className="mb-3 hidden text-[11px] font-semibold uppercase tracking-[0.12em] text-olive lg:block">
-        Mill machinery expertise
-      </p>
-      <div className="overflow-hidden rounded-sm border border-[var(--border)] bg-white shadow-lift">
+      <div className="relative aspect-[4/3] w-full bg-white">
         <Image
           src="/machinery/mill-equipment-collage.png"
           alt="Grain milling equipment including pre-cleaner, polisher, aspiration system, paddy separator, and whitener"
-          width={1024}
-          height={1024}
+          fill
           priority
-          className="h-auto w-full object-contain"
+          className="object-contain p-4 sm:p-5"
           sizes="(max-width: 1024px) 100vw, 440px"
         />
       </div>
-      <figcaption className="mt-3 hidden text-center text-[11px] leading-relaxed text-charcoal-muted lg:block">
+      <figcaption className="border-t border-[var(--border)] px-4 py-3 text-center text-[11px] leading-relaxed text-charcoal-muted sm:px-6">
         Pre-cleaner · polisher · aspiration · paddy separator · whitener
       </figcaption>
     </figure>

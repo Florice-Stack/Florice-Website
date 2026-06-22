@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -10,37 +11,42 @@ const config: Config = {
     extend: {
       colors: {
         ivory: {
-          DEFAULT: "#f6f3ec",
-          muted: "#ece8df",
-          card: "#fdfcf9",
+          DEFAULT: "#ffffff",
+          muted: "#f8f6fa",
+          soft: "#f0ebf4",
+          card: "#ffffff",
         },
         charcoal: {
-          DEFAULT: "#1a1917",
-          muted: "#5a574f",
+          DEFAULT: "#2f2f2e",
+          muted: "#6b6b6b",
         },
         olive: {
-          DEFAULT: "#465738",
-          dark: "#38462d",
-          accent: "#2f3d2a",
-          light: "#7d9469",
+          DEFAULT: "#5d4e67",
+          dark: "#4a3d52",
+          accent: "#1a1a1a",
+          light: "#8a7a94",
         },
-        copper: "#7a6348",
-        slate: "#3f5363",
+        copper: "#5d4e67",
+        slate: "#4a5568",
       },
       fontFamily: {
-        serif: ["var(--font-dm-serif)", "Georgia", "serif"],
-        sans: ["var(--font-ibm-plex)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-montserrat)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         content: "1140px",
       },
       boxShadow: {
-        card: "0 8px 28px rgba(26, 25, 23, 0.07)",
-        lift: "0 20px 50px rgba(26, 25, 23, 0.09)",
+        card: "0 4px 24px rgba(47, 47, 46, 0.06)",
+        lift: "0 16px 40px rgba(47, 47, 46, 0.1)",
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addVariant }) => {
+      addVariant("motion-safe", "@media (prefers-reduced-motion: no-preference)");
+    }),
+  ],
 };
 
 export default config;

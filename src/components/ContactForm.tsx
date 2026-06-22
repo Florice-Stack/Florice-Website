@@ -3,6 +3,16 @@
 import { FormEvent, useState } from "react";
 import { site } from "@/lib/content";
 
+const industryLabels: Record<string, string> = {
+  rice: "Rice mill",
+  wheat: "Wheat / flour mill",
+  parboiling: "Parboiling unit",
+  cleaning: "Grain cleaning & grading",
+  packaging: "Packaging / dispatch line",
+  modernization: "Modernization or expansion",
+  other: "Other grain processing",
+};
+
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -12,25 +22,61 @@ export default function ContactForm() {
     setStatus("submitting");
     setErrorMessage("");
 
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY?.trim();
+
+    if (!accessKey) {
+      setErrorMessage("Contact form is not configured yet. Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in Vercel and redeploy.");
+      setStatus("error");
+      return;
+    }
+
     const form = event.currentTarget;
     const data = new FormData(form);
 
+    if (data.get("bot-field")) {
+      setStatus("success");
+      form.reset();
+      return;
+    }
+
+    const name = String(data.get("name") ?? "").trim();
+    const company = String(data.get("company") ?? "").trim();
+    const email = String(data.get("email") ?? "").trim();
+    const phone = String(data.get("phone") ?? "").trim();
+    const industry = String(data.get("industry") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    const plantType = industryLabels[industry] ?? industry;
+    const formattedMessage = [
+      `Company / Mill: ${company}`,
+      `Plant type: ${plantType}`,
+      phone ? `Phone: ${phone}` : null,
+      "",
+      message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
-          name: data.get("name"),
-          company: data.get("company"),
-          email: data.get("email"),
-          phone: data.get("phone"),
-          industry: data.get("industry"),
-          message: data.get("message"),
-          botField: data.get("bot-field"),
+          access_key: accessKey,
+          name,
+          email,
+          subject: `Florice consultation request — ${company}`,
+          message: formattedMessage,
+          from_name: "Florice Website",
+          replyto: email,
+          botcheck: false,
         }),
       });
 
-      const result = (await response.json()) as { success?: boolean; error?: string };
+      const result = (await response.json()) as { success?: boolean; message?: string };
 
       if (response.ok && result.success) {
         setStatus("success");
@@ -38,9 +84,9 @@ export default function ContactForm() {
         return;
       }
 
-      setErrorMessage(result.error ?? "Something went wrong.");
+      setErrorMessage(result.message ?? "Unable to send your request.");
     } catch {
-      setErrorMessage("Something went wrong.");
+      setErrorMessage("Network error while sending your request.");
     }
 
     setStatus("error");

@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, IBM_Plex_Sans } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileCtaBar from "@/components/layout/MobileCtaBar";
 import { site } from "@/lib/content";
 import "./globals.css";
 
-const dmSerif = DM_Serif_Display({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-dm-serif",
+  weight: ["600", "700", "800"],
+  variable: "--font-montserrat",
 });
 
-const ibmPlex = IBM_Plex_Sans({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-ibm-plex",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${dmSerif.variable} ${ibmPlex.variable} pb-20 sm:pb-0`}>
+      <body className={`${montserrat.variable} ${inter.variable} pb-20 sm:pb-0`}>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-sm focus:bg-olive focus:px-4 focus:py-2 focus:text-ivory"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[var(--button)] focus:px-4 focus:py-2 focus:text-white"
         >
           Skip to content
         </a>

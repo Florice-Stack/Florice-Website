@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="border-b border-[var(--border)] bg-ivory-muted section-pad">
+      <section className="section-surface border-b border-[var(--border)] section-pad">
         <div className="container-content grid items-center gap-10 lg:grid-cols-2">
           <div>
             <p className="eyebrow">About Florice</p>
@@ -45,23 +45,23 @@ export default function AboutPage() {
         <div className="container-content grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {aboutCredentials.map((cred) => (
             <div key={cred.label} className="card-surface text-center">
-              <strong className="block font-serif text-3xl text-olive">{cred.value}</strong>
+              <strong className="block font-display text-3xl text-olive">{cred.value}</strong>
               <span className="mt-2 block text-sm text-charcoal-muted">{cred.label}</span>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="section-pad bg-ivory-muted">
+      <section className="section-surface section-pad">
         <div className="container-content grid gap-10 lg:grid-cols-2">
           <div className="card-surface flex flex-col justify-center border border-olive/20 bg-ivory-card">
             <span className="text-xs font-semibold uppercase tracking-wide text-olive">Capabilities Overview</span>
-            <p className="mt-4 font-serif text-3xl text-charcoal">Florice Milling Spare & Solution</p>
+            <p className="mt-4 font-display text-3xl text-charcoal">Florice Milling Spare & Solution</p>
             <p className="mt-2 text-sm text-charcoal-muted">Rice · Wheat · Grain Processing Consulting</p>
           </div>
           <div>
             <p className="eyebrow">Capabilities Brochure</p>
-            <h2 className="text-3xl font-serif">Download our consulting capabilities overview</h2>
+            <h2 className="text-3xl font-display">Download our consulting capabilities overview</h2>
             <p className="mt-3 text-charcoal-muted">
               A concise reference for mill owners, project managers, and operations teams.
             </p>
@@ -86,7 +86,7 @@ export default function AboutPage() {
       <section className="section-pad">
         <div className="container-content">
           <p className="eyebrow">How We Work</p>
-          <h2 className="text-3xl font-serif">Our five-stage consulting process</h2>
+          <h2 className="text-3xl font-display">Our five-stage consulting process</h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-5">
             {processSteps.map((step) => (
               <li key={step.step} className="card-surface">
@@ -99,13 +99,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="faq" className="section-pad bg-ivory-muted">
+      <section id="faq" className="section-surface section-pad">
         <div className="container-content max-w-3xl">
           <p className="eyebrow">FAQ</p>
-          <h2 className="text-3xl font-serif">Questions mill owners ask when planning upgrades</h2>
+          <h2 className="text-3xl font-display">Questions mill owners ask when planning upgrades</h2>
           <div className="mt-8 space-y-3">
             {faqItems.map((item) => (
-              <details key={item.question} className="card-surface group">
+              <details key={item.question} className="faq-item card-surface group">
                 <summary className="cursor-pointer list-none font-semibold marker:content-none [&::-webkit-details-marker]:hidden">
                   <span className="flex items-start justify-between gap-4">
                     {item.question}

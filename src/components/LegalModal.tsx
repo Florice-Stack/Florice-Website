@@ -49,11 +49,11 @@ export default function LegalModal({ open, title, effectiveDate, sections, onClo
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
-        className="relative z-10 flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-sm border border-[var(--border)] bg-ivory-card shadow-lift"
+        className="relative z-10 flex max-h-[85vh] w-full max-w-2xl flex-col overflow-hidden rounded-md border border-[var(--border)] bg-ivory-card shadow-lift"
       >
         <div className="flex items-start justify-between gap-4 border-b border-[var(--border)] px-6 py-5">
           <div>
-            <h2 id={titleId} className="font-serif text-2xl text-charcoal">
+            <h2 id={titleId} className="font-display text-2xl text-charcoal">
               {title}
             </h2>
             <p className="mt-1 text-xs text-charcoal-muted">Effective {effectiveDate}</p>
@@ -62,7 +62,7 @@ export default function LegalModal({ open, title, effectiveDate, sections, onClo
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-sm border border-[var(--border)] text-charcoal hover:bg-ivory-muted"
+            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[var(--border)] text-charcoal hover:bg-ivory-muted"
             aria-label="Close"
           >
             <X className="h-4 w-4" aria-hidden />

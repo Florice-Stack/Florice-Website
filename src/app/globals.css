@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background: #f6f3ec;
-  --foreground: #1a1917;
-  --muted: #5a574f;
-  --border: #cfc9bc;
-  --accent: #465738;
-  --accent-hover: #38462d;
-  --card: #fdfcf9;
-  --accent-bg: #2f3d2a;
+  --background: #ffffff;
+  --foreground: #2f2f2e;
+  --muted: #6b6b6b;
+  --border: #e9e4f0;
+  --surface-muted: #f8f6fa;
+  --surface-muted-end: #f0ebf4;
+  --accent: #5d4e67;
+  --accent-hover: #4a3d52;
+  --card: #ffffff;
+  --accent-bg: #1a1a1a;
+  --button: #1a1a1a;
+  --button-hover: #2d2d2d;
 }
 
 @layer base {
@@ -18,13 +22,19 @@
     scroll-behavior: smooth;
   }
 
+  [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
   body {
     @apply bg-ivory text-charcoal font-sans antialiased;
   }
 
   h1,
-  h2 {
-    @apply font-serif font-normal tracking-tight;
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-bold tracking-tight text-charcoal;
   }
 }
 
@@ -34,7 +44,7 @@
   }
 
   .eyebrow {
-    @apply mb-3 text-xs font-semibold uppercase tracking-[0.14em] text-olive;
+    @apply mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-olive;
   }
 
   .section-pad {
@@ -42,18 +52,83 @@
   }
 
   .btn {
-    @apply inline-flex items-center justify-center rounded-sm px-5 py-2.5 text-sm font-semibold transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold motion-safe:transition-all motion-safe:duration-200;
   }
 
   .btn-primary {
-    @apply bg-olive text-ivory hover:bg-olive-dark;
+    @apply bg-[var(--button)] text-white hover:bg-[var(--button-hover)] motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md motion-safe:active:translate-y-0;
   }
 
   .btn-outline {
-    @apply border border-olive text-olive hover:bg-olive hover:text-ivory;
+    @apply border border-charcoal text-charcoal hover:bg-charcoal hover:text-white motion-safe:hover:-translate-y-0.5 motion-safe:active:translate-y-0;
   }
 
   .card-surface {
-    @apply rounded-sm border border-[var(--border)] bg-ivory-card p-6 shadow-card;
+    @apply rounded-md border border-[var(--border)] bg-ivory-card p-6 shadow-card motion-safe:transition-all motion-safe:duration-200;
+  }
+
+  .card-interactive {
+    @apply card-surface motion-safe:hover:-translate-y-1 motion-safe:hover:border-olive/30 motion-safe:hover:shadow-lift;
+  }
+
+  .interactive-stat:hover {
+    @apply motion-safe:-translate-y-0.5;
+  }
+
+  .interactive-media:hover {
+    @apply motion-safe:shadow-lift motion-safe:-translate-y-1;
+  }
+
+  .interactive-scope:hover {
+    @apply bg-white/60;
+  }
+
+  .faq-item[open] {
+    @apply border-olive/30 shadow-lift;
+  }
+
+  .faq-item summary {
+    @apply motion-safe:transition-colors motion-safe:duration-200;
+  }
+
+  .faq-item summary:hover {
+    @apply text-olive;
+  }
+
+  .section-heading {
+    @apply text-center font-display text-3xl font-bold uppercase tracking-wide text-olive sm:text-4xl md:text-5xl;
+  }
+
+  .section-surface {
+    background: linear-gradient(180deg, var(--surface-muted) 0%, var(--surface-muted-end) 100%);
+  }
+
+  .panel-surface {
+    background: linear-gradient(135deg, #fdfcff 0%, #f6f1f8 55%, #ede6f2 100%);
+  }
+}
+
+@layer utilities {
+  @media (prefers-reduced-motion: reduce) {
+    .motion-safe\:transition-all,
+    .motion-safe\:transition-colors,
+    .motion-safe\:duration-200,
+    .motion-safe\:duration-700,
+    .motion-safe\:ease-out,
+    .motion-safe\:translate-y-0,
+    .motion-safe\:translate-y-7,
+    .motion-safe\:opacity-0,
+    .motion-safe\:opacity-100,
+    .motion-safe\:hover\:-translate-y-0\.5,
+    .motion-safe\:hover\:-translate-y-1,
+    .motion-safe\:hover\:translate-x-0\.5,
+    .motion-safe\:hover\:shadow-md,
+    .motion-safe\:hover\:shadow-lift,
+    .motion-safe\:active\:translate-y-0 {
+      transition: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+      box-shadow: none !important;
+    }
   }
 }
