@@ -24,7 +24,7 @@ export default function HomeBusinessPillars({ pillars }: { pillars: readonly Pil
 
             return (
               <Reveal key={pillar.id} delay={index * 70} className="h-full">
-                <article className="flex h-full flex-col rounded-xl border border-[var(--border)] bg-white p-5 shadow-card sm:p-6">
+                <article className="flex h-full flex-col glass-panel rounded-xl p-5 sm:p-6">
                   <SectionIcon visual={visual} />
                   <p className="mt-4 text-[10px] font-bold uppercase tracking-[0.14em] text-olive">{pillar.eyebrow}</p>
                   <h3 className="mt-2 text-lg font-semibold leading-snug text-charcoal">{pillar.title}</h3>

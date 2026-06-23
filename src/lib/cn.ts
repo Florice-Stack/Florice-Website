@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-/** Alternating page section backgrounds — even index uses tinted surface, odd uses white. */
+/** Alternating page section backgrounds — even index uses tinted glass surface, odd stays clear. */
 export function sectionBandClass(sectionIndex: number) {
-  return sectionIndex % 2 === 0 ? "section-surface" : "bg-white";
+  return sectionIndex % 2 === 0 ? "section-surface" : "section-clear";
 }

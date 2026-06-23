@@ -167,7 +167,7 @@ export default function ContactForm() {
           name="name"
           required
           autoComplete="name"
-          className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+          className="glass-input"
         />
       </div>
 
@@ -180,7 +180,7 @@ export default function ContactForm() {
           name="company"
           required
           autoComplete="organization"
-          className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+          className="glass-input"
         />
       </div>
 
@@ -195,7 +195,7 @@ export default function ContactForm() {
             type="email"
             required
             autoComplete="email"
-            className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+            className="glass-input"
           />
         </div>
         <div>
@@ -207,7 +207,7 @@ export default function ContactForm() {
             name="phone"
             type="tel"
             autoComplete="tel"
-            className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+            className="glass-input"
           />
         </div>
       </div>
@@ -220,7 +220,7 @@ export default function ContactForm() {
           id="industry"
           name="industry"
           required
-          className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+          className="glass-input"
         >
           <option value="">Select operation type</option>
           <option value="rice">Rice mill</option>
@@ -243,7 +243,7 @@ export default function ContactForm() {
           rows={4}
           required
           placeholder="e.g. 15 TPH rice mill, basmati, head rice dropped 3% after polisher upgrade."
-          className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+          className="glass-input"
         />
       </div>
 
@@ -259,7 +259,7 @@ export default function ContactForm() {
           accept={ACCEPTED_FORM_IMAGE_ACCEPT}
           multiple
           onChange={handlePhotoChange}
-          className="block w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm file:mr-3 file:rounded-full file:border-0 file:bg-olive/10 file:px-3 file:py-1 file:text-xs file:font-semibold file:text-olive"
+          className="block glass-input file:mr-3 file:rounded-full file:border-0 file:bg-olive/10 file:px-3 file:py-1 file:text-xs file:font-semibold file:text-olive"
         />
         <p className="mt-2 text-xs text-charcoal-muted">
           Optional. Up to {MAX_FORM_PHOTO_COUNT} images, {MAX_FORM_PHOTO_SIZE_MB} MB each. JPG, PNG, WEBP, or GIF.

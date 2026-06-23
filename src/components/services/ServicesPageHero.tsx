@@ -41,7 +41,7 @@ export default function ServicesPageHero({ hero }: { hero: Hero }) {
         </div>
       </div>
 
-      <div className="border-t border-[var(--border)] bg-white">
+      <div className="border-t border-[var(--border)] glass-nav">
         <div className="container-content py-6">
           <ServicesHeroVisual />
         </div>

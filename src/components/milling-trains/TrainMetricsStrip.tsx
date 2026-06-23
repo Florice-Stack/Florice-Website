@@ -9,7 +9,7 @@ type TrainMetricsStripProps = {
 export default function TrainMetricsStrip({ train, accent }: TrainMetricsStripProps) {
   return (
     <div className="grid gap-3 sm:grid-cols-3">
-      <div className="flex gap-3 rounded-md border border-[var(--border)] bg-white p-4 shadow-sm">
+      <div className="flex gap-3 glass-panel rounded-md p-4 shadow-sm">
         <span
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
           style={{ backgroundColor: `${accent}14`, color: accent }}
@@ -22,7 +22,7 @@ export default function TrainMetricsStrip({ train, accent }: TrainMetricsStripPr
         </div>
       </div>
 
-      <div className="flex gap-3 rounded-md border border-[var(--border)] bg-white p-4 shadow-sm">
+      <div className="flex gap-3 glass-panel rounded-md p-4 shadow-sm">
         <span
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
           style={{ backgroundColor: `${accent}14`, color: accent }}
@@ -44,7 +44,7 @@ export default function TrainMetricsStrip({ train, accent }: TrainMetricsStripPr
         </div>
       </div>
 
-      <div className="flex gap-3 rounded-md border border-[var(--border)] bg-white p-4 shadow-sm sm:col-span-2 lg:col-span-1">
+      <div className="flex gap-3 glass-panel rounded-md p-4 shadow-sm sm:col-span-2 lg:col-span-1">
         <span
           className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg"
           style={{ backgroundColor: `${accent}14`, color: accent }}

@@ -27,7 +27,7 @@ export default function TrainStageTimeline({ train, accent }: TrainStageTimeline
             <article className="grid gap-4 sm:grid-cols-[3.25rem_minmax(0,1fr)] sm:gap-5">
               <div className="flex sm:flex-col sm:items-center">
                 <div
-                  className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border-2 bg-white shadow-sm"
+                  className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border-2 glass-panel-strong"
                   style={{ borderColor: tone }}
                 >
                   <div
@@ -48,7 +48,7 @@ export default function TrainStageTimeline({ train, accent }: TrainStageTimeline
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card">
+              <div className="overflow-hidden rounded-md glass-panel">
                 <div className="h-1" style={{ backgroundColor: tone }} aria-hidden />
 
                 <div className="p-4 sm:p-5">
@@ -66,7 +66,7 @@ export default function TrainStageTimeline({ train, accent }: TrainStageTimeline
                         {step.equipment.map((item) => (
                           <span
                             key={item}
-                            className="rounded-full border border-[var(--border)] bg-ivory-muted/50 px-2.5 py-1 text-[11px] text-charcoal-muted"
+                            className="glass-pill rounded-full px-2.5 py-1 text-[11px] text-charcoal-muted"
                           >
                             {item}
                           </span>

@@ -63,7 +63,7 @@ export default function ServiceCardsGrid({ items }: { items: readonly Service[] 
         return (
           <article
             key={service.title}
-            className="group overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lift"
+            className="group overflow-hidden rounded-md glass-panel motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lift"
           >
             <div
               className="h-1.5"
@@ -73,7 +73,7 @@ export default function ServiceCardsGrid({ items }: { items: readonly Service[] 
             <div className="p-6">
               <div className="flex items-start gap-4">
                 <span
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-2 bg-white shadow-sm motion-safe:transition-transform motion-safe:duration-200 group-hover:scale-105"
+                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border-2 glass-panel-strong motion-safe:transition-transform motion-safe:duration-200 group-hover:scale-105"
                   style={{ borderColor: visual.barFrom, color: visual.accent }}
                 >
                   <Icon className="h-5 w-5" aria-hidden />

@@ -31,7 +31,7 @@ export default function ConsultingSectorsGrid({ items }: { items: readonly Secto
               key={sector.title}
               type="button"
               onClick={() => setActiveSector(sector)}
-              className="group w-full touch-manipulation overflow-hidden rounded-md border border-[var(--border)] bg-white text-left shadow-card motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
+              className="group w-full touch-manipulation overflow-hidden glass-panel rounded-md text-left motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
             >
               <div
                 className="h-1.5"
@@ -55,7 +55,7 @@ export default function ConsultingSectorsGrid({ items }: { items: readonly Secto
                   {sector.applications.map((item) => (
                     <li
                       key={item}
-                      className="rounded-full border border-[var(--border)] bg-ivory-muted/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-charcoal-muted"
+                      className="glass-pill rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-charcoal-muted"
                     >
                       {item}
                     </li>

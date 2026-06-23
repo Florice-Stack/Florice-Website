@@ -30,7 +30,7 @@ export default function SparePartsCatalog({ categories, bandOffset = 0 }: SpareP
                     {category.machineTags.map((tag) => (
                       <li
                         key={tag}
-                        className="rounded-full border border-[var(--border)] bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-charcoal-muted"
+                        className="glass-pill rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-charcoal-muted"
                       >
                         {tag}
                       </li>
@@ -56,7 +56,7 @@ export default function SparePartsCatalog({ categories, bandOffset = 0 }: SpareP
                       {category.images.map((image) => (
                         <figure
                           key={image.src}
-                          className="interactive-media overflow-hidden rounded-xl border border-[var(--border)] bg-white motion-safe:transition-all motion-safe:duration-200"
+                          className="interactive-media glass-panel overflow-hidden rounded-xl motion-safe:transition-all motion-safe:duration-200"
                         >
                           <div className="relative aspect-[4/3] bg-ivory-muted/30">
                             <Image

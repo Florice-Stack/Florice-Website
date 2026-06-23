@@ -18,7 +18,7 @@ export default function ServicesHeroVisual() {
 
   return (
     <>
-      <div className="overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card">
+      <div className="overflow-hidden rounded-md glass-panel">
         <div className="grid divide-y divide-[var(--border)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {consultingScopePillars.map((pillar) => {
             const visual = pillarVisuals[pillar.id] ?? pillarVisuals["greenfield-brownfield"];

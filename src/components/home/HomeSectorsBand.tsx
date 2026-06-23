@@ -32,7 +32,7 @@ export default function HomeSectorsBand({ sectors }: { sectors: readonly Sector[
         <Reveal delay={120} className="mt-8">
           <Link
             href="/milling-trains"
-            className="group inline-flex items-center gap-2 rounded-lg border border-[var(--border)] bg-white px-4 py-3 text-sm font-semibold text-charcoal shadow-card hover:border-olive/30 hover:text-olive"
+            className="group inline-flex items-center gap-2 glass-panel rounded-lg px-4 py-3 text-sm font-semibold text-charcoal hover:border-olive/30 hover:text-olive"
           >
             Explore rice & flour milling trains stage by stage
             <ArrowRight className="h-4 w-4 motion-safe:transition-transform motion-safe:group-hover:translate-x-1" aria-hidden />

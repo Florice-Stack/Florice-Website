@@ -19,7 +19,7 @@ export default function SparePartsPrinciplesGrid({ items }: { items: readonly Pr
         return (
           <article
             key={item.title}
-            className="overflow-hidden rounded-md border border-[var(--border)] bg-white text-center shadow-card"
+            className="overflow-hidden glass-panel rounded-md text-center"
           >
             <div className="h-1" style={{ backgroundColor: visual.tone }} aria-hidden />
             <div className="px-5 py-5">

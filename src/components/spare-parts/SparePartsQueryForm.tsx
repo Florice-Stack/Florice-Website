@@ -184,7 +184,7 @@ export default function SparePartsQueryForm() {
           name="name"
           required
           autoComplete="name"
-          className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+          className="glass-input"
         />
       </div>
 
@@ -197,7 +197,7 @@ export default function SparePartsQueryForm() {
           name="company"
           required
           autoComplete="organization"
-          className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+          className="glass-input"
         />
       </div>
 
@@ -212,7 +212,7 @@ export default function SparePartsQueryForm() {
             type="email"
             required
             autoComplete="email"
-            className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+            className="glass-input"
           />
         </div>
         <div>
@@ -224,7 +224,7 @@ export default function SparePartsQueryForm() {
             name="phone"
             type="tel"
             autoComplete="tel"
-            className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+            className="glass-input"
           />
         </div>
       </div>
@@ -238,7 +238,7 @@ export default function SparePartsQueryForm() {
             id="sp-plantType"
             name="plantType"
             required
-            className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+            className="glass-input"
           >
             <option value="">Select plant type</option>
             <option value="rice">Rice mill</option>
@@ -256,7 +256,7 @@ export default function SparePartsQueryForm() {
             id="sp-urgency"
             name="urgency"
             required
-            className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+            className="glass-input"
           >
             <option value="">Select urgency</option>
             <option value="breakdown">Breakdown — production stopped or at risk</option>
@@ -275,7 +275,7 @@ export default function SparePartsQueryForm() {
           name="machine"
           required
           placeholder="e.g. Satake VTA 10 TPH whitener"
-          className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+          className="glass-input"
         />
       </div>
 
@@ -288,7 +288,7 @@ export default function SparePartsQueryForm() {
             id="sp-category"
             name="category"
             required
-            className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+            className="glass-input"
           >
             <option value="">Select category</option>
             <optgroup label="Machinery lines">
@@ -317,7 +317,7 @@ export default function SparePartsQueryForm() {
             name="quantity"
             required
             placeholder="e.g. 2 sets, 4 pieces"
-            className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+            className="glass-input"
           />
         </div>
       </div>
@@ -332,7 +332,7 @@ export default function SparePartsQueryForm() {
           rows={4}
           required
           placeholder="Describe the part, dimensions, and OEM part number if known."
-          className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+          className="glass-input"
         />
       </div>
 
@@ -348,7 +348,7 @@ export default function SparePartsQueryForm() {
           accept={ACCEPTED_FORM_IMAGE_ACCEPT}
           multiple
           onChange={handlePhotoChange}
-          className="block w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm file:mr-3 file:rounded-full file:border-0 file:bg-olive/10 file:px-3 file:py-1 file:text-xs file:font-semibold file:text-olive"
+          className="block glass-input file:mr-3 file:rounded-full file:border-0 file:bg-olive/10 file:px-3 file:py-1 file:text-xs file:font-semibold file:text-olive"
         />
         <p className="mt-2 text-xs text-charcoal-muted">
           Optional. Up to {MAX_FORM_PHOTO_COUNT} images, {MAX_FORM_PHOTO_SIZE_MB} MB each. JPG, PNG, WEBP, or GIF.
@@ -370,7 +370,7 @@ export default function SparePartsQueryForm() {
           name="notes"
           rows={2}
           placeholder="Operating hours since last change, alternate suppliers tried, etc."
-          className="w-full rounded-sm border border-[var(--border)] bg-white px-3 py-2 text-sm"
+          className="glass-input"
         />
       </div>
 

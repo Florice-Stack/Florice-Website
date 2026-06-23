@@ -12,7 +12,7 @@ const stepVisuals: Record<string, { icon: LucideIcon; tone: string }> = {
 
 export default function SparePartsProcessFlow({ steps }: { steps: readonly ProcessStep[] }) {
   return (
-    <div className="overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card">
+    <div className="overflow-hidden rounded-md glass-panel">
       <div className="relative px-4 py-5 sm:px-6 sm:py-6">
         <div
           className="pointer-events-none absolute left-[12%] right-[12%] top-[2.15rem] hidden h-px bg-olive/20 lg:block"
@@ -27,7 +27,7 @@ export default function SparePartsProcessFlow({ steps }: { steps: readonly Proce
             return (
               <li key={step.step} className="relative z-[1] flex flex-col items-center px-1 text-center">
                 <div
-                  className="relative flex h-11 w-11 items-center justify-center rounded-xl border-2 bg-white shadow-sm"
+                  className="relative flex h-11 w-11 items-center justify-center rounded-xl border-2 glass-panel-strong"
                   style={{ borderColor: visual.tone }}
                 >
                   <div

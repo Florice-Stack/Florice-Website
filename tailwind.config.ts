@@ -37,8 +37,9 @@ const config: Config = {
         content: "1140px",
       },
       boxShadow: {
-        card: "0 4px 24px rgba(47, 47, 46, 0.06)",
-        lift: "0 16px 40px rgba(47, 47, 46, 0.1)",
+        card: "0 8px 32px rgba(47, 47, 46, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.65)",
+        lift: "0 16px 48px rgba(47, 47, 46, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.7)",
+        glass: "0 8px 32px rgba(47, 47, 46, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.65)",
       },
     },
   },

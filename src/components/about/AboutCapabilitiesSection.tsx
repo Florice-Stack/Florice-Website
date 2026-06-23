@@ -18,8 +18,8 @@ export default function AboutCapabilitiesSection({ groups }: { groups: readonly 
 
   return (
     <div className="mx-auto max-w-xl">
-      <div className="relative flex min-h-[320px] flex-col items-center justify-center overflow-hidden rounded-xl border border-olive/20 bg-gradient-to-br from-[#f0ebf4] via-white to-[#f5efe3] p-8 text-center shadow-card">
-        <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl border border-olive/20 bg-white text-olive shadow-sm">
+      <div className="relative flex min-h-[320px] flex-col items-center justify-center overflow-hidden rounded-xl glass-gradient p-8 text-center">
+        <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl glass-panel-strong text-olive">
           <FileDown className="h-8 w-8" aria-hidden />
         </span>
         <p className="mt-5 text-xs font-semibold uppercase tracking-[0.14em] text-olive">Capabilities Overview</p>
@@ -29,7 +29,7 @@ export default function AboutCapabilitiesSection({ groups }: { groups: readonly 
           {["Services & Projects", "Auxiliary machinery", "Spare parts catalogue", "Vendor-neutral"].map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[var(--border)] bg-white/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-charcoal-muted"
+              className="glass-pill rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-charcoal-muted"
             >
               {tag}
             </span>

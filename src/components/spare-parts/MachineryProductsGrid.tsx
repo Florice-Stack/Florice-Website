@@ -30,7 +30,7 @@ export default function MachineryProductsGrid({ products, notListedNote, notList
           <article
             key={product.id}
             id={product.anchor}
-            className="group scroll-mt-24 overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lift"
+            className="group scroll-mt-24 overflow-hidden rounded-md glass-panel motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lift"
           >
             <div
               className="h-1.5"
@@ -56,7 +56,7 @@ export default function MachineryProductsGrid({ products, notListedNote, notList
                 {product.tags.map((tag) => (
                   <li
                     key={tag}
-                    className="rounded-full border border-[var(--border)] bg-ivory-muted/50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-charcoal-muted"
+                    className="glass-pill rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-charcoal-muted"
                   >
                     {tag}
                   </li>

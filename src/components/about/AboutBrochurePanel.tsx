@@ -18,7 +18,7 @@ export function AboutFaqAccordion({
         return (
           <details
             key={item.question}
-            className="group overflow-hidden rounded-xl border border-[var(--border)] bg-white shadow-card open:shadow-md"
+            className="group overflow-hidden rounded-xl glass-panel open:shadow-md"
           >
             <summary className="cursor-pointer list-none px-4 py-4 marker:content-none sm:px-5 [&::-webkit-details-marker]:hidden">
               <span className="flex items-start gap-3">

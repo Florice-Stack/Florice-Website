@@ -26,7 +26,7 @@ export default function IndustriesGrid({ items }: { items: readonly Industry[] }
         return (
           <article
             key={industry.title}
-            className="group flex gap-4 rounded-md border border-[var(--border)] bg-white p-5 shadow-card motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-lift"
+            className="group flex gap-4 glass-panel rounded-md p-5 shadow-card motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-lift"
           >
             <span
               className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl motion-safe:transition-transform motion-safe:duration-200 group-hover:scale-105"

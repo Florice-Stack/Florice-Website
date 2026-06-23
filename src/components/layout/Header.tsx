@@ -64,8 +64,8 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b bg-white/95 backdrop-blur-sm motion-safe:transition-[transform,box-shadow] motion-safe:duration-300",
-        scrolled ? "border-[var(--border)] shadow-md" : "border-[var(--border)] shadow-none",
+        "fixed inset-x-0 top-0 z-50 border-b glass-nav motion-safe:transition-[transform,box-shadow] motion-safe:duration-300",
+        scrolled ? "border-[var(--border)] shadow-md" : "border-[var(--border)]/80 shadow-none",
         hidden ? "-translate-y-full" : "translate-y-0",
       )}
     >
@@ -102,7 +102,7 @@ export default function Header() {
         <div className="flex items-center gap-2 lg:hidden">
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[var(--border)]"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full glass-pill"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -116,7 +116,7 @@ export default function Header() {
       <nav
         id="mobile-nav"
         className={cn(
-          "overflow-hidden border-t border-[var(--border)] bg-white lg:hidden motion-safe:transition-all motion-safe:duration-300",
+          "overflow-hidden border-t border-[var(--border)] glass-nav lg:hidden motion-safe:transition-all motion-safe:duration-300",
           open ? "max-h-96 opacity-100" : "pointer-events-none max-h-0 opacity-0 border-transparent",
         )}
         aria-label="Mobile navigation"
@@ -127,7 +127,7 @@ export default function Header() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="block rounded-md px-2 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-charcoal hover:bg-ivory-muted"
+                className="block rounded-md px-2 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-charcoal hover:bg-white/40"
                 onClick={() => setOpen(false)}
               >
                 {link.label}

@@ -28,7 +28,7 @@ export default function MillingTrainsPage() {
               </div>
             </Reveal>
             <Reveal delay={80} className="min-w-0">
-              <div className="interactive-media overflow-hidden rounded-xl border border-[var(--border)] bg-white motion-safe:transition-all motion-safe:duration-200">
+              <div className="interactive-media glass-panel overflow-hidden rounded-xl motion-safe:transition-all motion-safe:duration-200">
                 <ConsultantHeroVideo />
               </div>
             </Reveal>

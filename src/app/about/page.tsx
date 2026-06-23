@@ -37,7 +37,7 @@ export default function AboutPage() {
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <figure className="interactive-media overflow-hidden rounded-xl border border-[var(--border)] bg-white motion-safe:transition-all motion-safe:duration-200">
+            <figure className="interactive-media glass-panel overflow-hidden rounded-xl motion-safe:transition-all motion-safe:duration-200">
               <Image
                 src="/about/plant-consultant.png"
                 alt="Professional Indian milling consultant assessing plant equipment on site"

@@ -3,7 +3,7 @@ import { sparePartsClosingCta } from "@/lib/content";
 
 export default function SparePartsClosingCta() {
   return (
-    <div className="rounded-md border border-[var(--border)] bg-white p-6 shadow-card sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
+    <div className="glass-panel rounded-md p-6 shadow-card sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
       <div className="max-w-2xl">
         <p className="eyebrow">{sparePartsClosingCta.eyebrow}</p>
         <h2 className="text-2xl font-display sm:text-3xl">{sparePartsClosingCta.title}</h2>

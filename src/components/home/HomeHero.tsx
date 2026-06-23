@@ -14,7 +14,7 @@ export default function HomeHero({
   trustLine: readonly TrustItem[];
 }) {
   return (
-    <section className="border-b border-[var(--border)] bg-white">
+    <section className="border-b border-[var(--border)]">
       <div className="container-content py-10 sm:py-12 lg:py-14">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.9fr)] lg:gap-12">
           <div className="min-w-0">
@@ -54,7 +54,7 @@ export default function HomeHero({
           </div>
 
           <Reveal delay={80}>
-            <figure className="interactive-media overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] shadow-card">
+            <figure className="interactive-media glass-panel overflow-hidden rounded-xl">
               <div className="relative aspect-[4/3] w-full">
                 <Image
                   src={content.image.src}

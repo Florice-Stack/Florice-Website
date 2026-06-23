@@ -10,7 +10,7 @@ export default function HomeClosingCta({ content }: { content: ClosingContent })
       <div className="container-content">
         <div className="grid gap-4 md:grid-cols-2 md:gap-5">
           <Reveal>
-            <article className="flex h-full flex-col rounded-xl border border-[var(--border)] bg-white p-6 shadow-card sm:p-7">
+            <article className="flex h-full flex-col glass-panel rounded-xl p-6 sm:p-7">
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-olive">Consulting</p>
               <h2 className="mt-2 text-xl font-display sm:text-2xl">{content.consulting.title}</h2>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-charcoal-muted sm:text-base">
@@ -23,7 +23,7 @@ export default function HomeClosingCta({ content }: { content: ClosingContent })
           </Reveal>
 
           <Reveal delay={70}>
-            <article className="flex h-full flex-col rounded-xl border border-[var(--border)] bg-[var(--surface-muted)] p-6 sm:p-7">
+            <article className="flex h-full flex-col glass-panel rounded-xl p-6 sm:p-7">
               <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-olive">Machinery & Spare Parts</p>
               <h2 className="mt-2 text-xl font-display sm:text-2xl">{content.supply.title}</h2>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-charcoal-muted sm:text-base">

@@ -30,7 +30,7 @@ export default function PostCommissioningGrid({ items }: { items: readonly Servi
               key={service.title}
               type="button"
               onClick={() => setActiveService(service)}
-              className="group w-full touch-manipulation overflow-hidden rounded-md border border-[var(--border)] bg-white text-left shadow-card motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
+              className="group w-full touch-manipulation overflow-hidden glass-panel rounded-md text-left motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-lift focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
             >
               <div
                 className="h-1.5"

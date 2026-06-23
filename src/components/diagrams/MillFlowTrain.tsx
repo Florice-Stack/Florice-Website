@@ -50,7 +50,7 @@ function StepNode({
   return (
     <div className="flex min-w-[5.5rem] flex-col items-center sm:min-w-[6.5rem]">
       <div
-        className={`group/step relative flex items-center justify-center rounded-2xl border-2 bg-white shadow-sm motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-md ${
+        className={`group/step relative flex items-center justify-center rounded-2xl border-2 glass-panel-strong motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-md ${
           compact ? stepIconSize.compact : stepIconSize.default
         }`}
         style={{ borderColor: step.tone }}
@@ -127,8 +127,8 @@ export default function MillFlowTrain({
     <div
       className={
         isHero || isEmbedded
-          ? "overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card"
-          : "overflow-hidden rounded-md border border-[var(--border)] bg-white"
+          ? "overflow-hidden rounded-md glass-panel"
+          : "overflow-hidden glass-panel rounded-md"
       }
       role="img"
       aria-label={ariaLabel}
@@ -183,7 +183,7 @@ export default function MillFlowTrain({
           {infrastructure.map((item) => (
             <div key={item.label} className="flex items-center gap-2 text-charcoal-muted">
               <span
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm"
+                className="flex h-7 w-7 items-center justify-center rounded-full glass-panel-strong"
                 style={{ color: accent }}
               >
                 {item.icon}

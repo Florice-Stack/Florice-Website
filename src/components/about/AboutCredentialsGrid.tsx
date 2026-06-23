@@ -20,7 +20,7 @@ export default function AboutCredentialsGrid({ items }: { items: readonly Creden
         return (
           <article
             key={cred.label}
-            className="overflow-hidden rounded-xl border border-[var(--border)] bg-white text-center shadow-card"
+            className="overflow-hidden glass-panel rounded-xl text-center"
           >
             <div className="h-1" style={{ backgroundColor: visual.tone }} aria-hidden />
             <div className="px-4 py-5">

@@ -430,7 +430,7 @@ export const homePillars = [
     eyebrow: "Spare Parts",
     title: "Wear parts for rice, flour & grain lines",
     highlights: [
-      "Whitener, polisher, plansifter & cleaning machine spares",
+      "Roller mill, whitener, polisher, plansifter & cleaning machine spares",
       "Fit confirmed against machine tag before dispatch",
       "Part not in catalogue — send nameplate photos",
     ],

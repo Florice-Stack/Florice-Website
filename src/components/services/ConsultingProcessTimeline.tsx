@@ -28,7 +28,7 @@ const compactSummaries: Record<string, string> = {
 
 export default function ConsultingProcessTimeline({ steps }: { steps: readonly Step[] }) {
   return (
-    <div className="overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card">
+    <div className="overflow-hidden rounded-md glass-panel">
       <div className="border-b border-[var(--border)] px-4 py-3 sm:px-5">
         <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-olive">Engagement flow</p>
         <p className="mt-0.5 text-xs text-charcoal-muted">
@@ -51,7 +51,7 @@ export default function ConsultingProcessTimeline({ steps }: { steps: readonly S
             return (
               <div key={step.step} className="flex flex-col items-center px-1 text-center" role="listitem">
                 <div
-                  className="relative z-[1] flex h-11 w-11 items-center justify-center rounded-xl border-2 bg-white shadow-sm"
+                  className="relative z-[1] flex h-11 w-11 items-center justify-center rounded-xl border-2 glass-panel-strong"
                   style={{ borderColor: visual.tone }}
                 >
                   <div

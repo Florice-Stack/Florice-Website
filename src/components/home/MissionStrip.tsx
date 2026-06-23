@@ -11,7 +11,7 @@ export default function MissionStrip() {
 
           return (
             <Reveal key={item.title} delay={index * 80}>
-              <div className="interactive-scope overflow-hidden rounded-xl border border-[var(--border)] bg-white shadow-card motion-safe:transition-all motion-safe:duration-200">
+              <div className="interactive-scope overflow-hidden rounded-xl glass-panel motion-safe:transition-all motion-safe:duration-200">
                 <div className="h-1" style={{ backgroundColor: visual.accent }} aria-hidden />
                 <div className="px-5 py-5 md:text-left">
                   <SectionIcon visual={visual} />

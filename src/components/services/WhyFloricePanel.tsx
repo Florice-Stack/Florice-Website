@@ -23,7 +23,7 @@ export default function WhyFloricePanel({ items }: WhyFloricePanelProps) {
 
   return (
     <>
-      <div className="overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card">
+      <div className="overflow-hidden rounded-md glass-panel">
         <div className="grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
           <div className="relative min-h-[220px] lg:min-h-[320px]">
             <Image
@@ -46,7 +46,7 @@ export default function WhyFloricePanel({ items }: WhyFloricePanelProps) {
                     key={prop.title}
                     type="button"
                     onClick={() => setActiveProp(prop)}
-                    className="flex flex-col items-center rounded-md border border-[var(--border)] bg-ivory-muted/30 px-4 py-4 text-center touch-manipulation motion-safe:transition-all motion-safe:duration-200 hover:border-olive/30 hover:bg-white hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
+                    className="flex flex-col items-center glass-panel rounded-md px-4 py-4 text-center touch-manipulation motion-safe:transition-all motion-safe:duration-200 hover:border-olive/30 hover:bg-white/50 hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
                   >
                     <span
                       className="flex h-10 w-10 items-center justify-center rounded-xl"

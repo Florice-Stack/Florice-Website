@@ -27,7 +27,7 @@ export default function MillingTrainsOverviewVisual() {
   }, []);
 
   return (
-    <figure className="interactive-media w-full overflow-hidden rounded-xl border border-[var(--border)] bg-white motion-safe:transition-all motion-safe:duration-200">
+    <figure className="interactive-media w-full glass-panel overflow-hidden rounded-xl motion-safe:transition-all motion-safe:duration-200">
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-charcoal">
         <video
           ref={videoRef}
