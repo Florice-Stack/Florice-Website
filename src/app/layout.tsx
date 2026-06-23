@@ -20,7 +20,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} | Rice & Wheat Milling Consulting`,
+    default: `${site.name} | Consulting, Machinery & Spare Parts`,
     template: `%s | Florice Milling`,
   },
   description: site.description,

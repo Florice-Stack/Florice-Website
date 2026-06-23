@@ -1,68 +1,67 @@
-import { Factory, Gauge, TrendingUp } from "lucide-react";
+"use client";
 
-const pillars = [
-  {
-    icon: Gauge,
-    label: "Recovery & yield",
-    detail: "Head rice, flour extraction, broken %",
-    tone: "#7a5c1e",
-    bg: "#f5efe3",
-  },
-  {
-    icon: Factory,
-    label: "Equipment & layout",
-    detail: "Capacity, capex, install clearance",
-    tone: "#4a5568",
-    bg: "#eef1f4",
-  },
-  {
-    icon: TrendingUp,
-    label: "Stable operations",
-    detail: "Downtime, aspiration, shift parameters",
-    tone: "#3d5c4a",
-    bg: "#edf3f0",
-  },
-];
+import { useState } from "react";
+import { ArrowRight, Building2, Calculator, Workflow, type LucideIcon } from "lucide-react";
+import ServiceDetailModal from "@/components/services/ServiceDetailModal";
+import { consultingScopePillars } from "@/lib/content";
+
+type Pillar = (typeof consultingScopePillars)[number];
+
+const pillarVisuals: Record<string, { icon: LucideIcon; tone: string; bg: string }> = {
+  "greenfield-brownfield": { icon: Building2, tone: "#7a5c1e", bg: "#f5efe3" },
+  "design-commissioning": { icon: Workflow, tone: "#4a5568", bg: "#eef1f4" },
+  "cost-controlled": { icon: Calculator, tone: "#3d5c4a", bg: "#edf3f0" },
+};
 
 export default function ServicesHeroVisual() {
+  const [activePillar, setActivePillar] = useState<Pillar | null>(null);
+
   return (
-    <div
-      className="overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card"
-      role="img"
-      aria-label="Consulting scope across recovery, equipment, and stable mill operations"
-    >
-      <div className="border-b border-[var(--border)] bg-ivory-muted/40 px-5 py-4">
-        <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-olive">Consulting scope</p>
-        <p className="mt-1 text-sm text-charcoal-muted">Where Florice engagements typically focus</p>
-      </div>
+    <>
+      <div className="overflow-hidden rounded-md border border-[var(--border)] bg-white shadow-card">
+        <div className="grid divide-y divide-[var(--border)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          {consultingScopePillars.map((pillar) => {
+            const visual = pillarVisuals[pillar.id] ?? pillarVisuals["greenfield-brownfield"];
+            const Icon = visual.icon;
 
-      <div className="grid divide-y divide-[var(--border)] sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-        {pillars.map((pillar) => {
-          const Icon = pillar.icon;
-
-          return (
-            <div key={pillar.label} className="flex flex-col items-center px-5 py-8 text-center">
-              <span
-                className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-white shadow-sm"
-                style={{ backgroundColor: pillar.bg, color: pillar.tone }}
+            return (
+              <button
+                key={pillar.id}
+                type="button"
+                onClick={() => setActivePillar(pillar)}
+                className="flex w-full touch-manipulation flex-col items-start px-4 py-4 text-left sm:items-center sm:px-5 sm:py-5 sm:text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-olive"
               >
-                <Icon className="h-6 w-6" aria-hidden />
-              </span>
-              <h2 className="mt-4 text-sm font-semibold">{pillar.label}</h2>
-              <p className="mt-2 text-xs leading-relaxed text-charcoal-muted">{pillar.detail}</p>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="border-t border-[var(--border)] px-5 py-3">
-        <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] font-semibold uppercase tracking-wide text-charcoal-muted">
-          <span className="rounded-full bg-olive/10 px-2.5 py-1 text-olive">Rice</span>
-          <span className="rounded-full bg-slate/10 px-2.5 py-1 text-slate">Wheat</span>
-          <span className="rounded-full bg-[#edf3f0] px-2.5 py-1 text-[#3d5c4a]">Parboiling</span>
-          <span className="rounded-full bg-[#f3ebf4] px-2.5 py-1 text-olive">Handling systems</span>
+                <div className="flex items-center gap-3 sm:flex-col">
+                  <span
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
+                    style={{ backgroundColor: visual.bg, color: visual.tone }}
+                  >
+                    <Icon className="h-5 w-5" aria-hidden />
+                  </span>
+                  <div className="min-w-0 sm:mt-1">
+                    <p className="text-sm font-semibold leading-snug">{pillar.label}</p>
+                    <p className="text-xs text-charcoal-muted">{pillar.detail}</p>
+                  </div>
+                </div>
+                <span className="mt-4 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-olive motion-safe:transition-all motion-safe:duration-200 hover:gap-2 sm:mx-auto">
+                  See more
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
-    </div>
+
+      <ServiceDetailModal
+        open={activePillar !== null}
+        title={activePillar?.label ?? ""}
+        subtitle={activePillar?.detail}
+        overview={activePillar?.details.overview ?? ""}
+        highlights={activePillar?.details.highlights ?? []}
+        onClose={() => setActivePillar(null)}
+        ctaLabel="Discuss project scope"
+      />
+    </>
   );
 }

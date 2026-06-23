@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import AboutBrochurePanel, { AboutBrochureVisual, AboutFaqAccordion } from "@/components/about/AboutBrochurePanel";
+import AboutCapabilitiesSection from "@/components/about/AboutCapabilitiesSection";
+import { AboutFaqAccordion } from "@/components/about/AboutBrochurePanel";
 import AboutCredentialsGrid from "@/components/about/AboutCredentialsGrid";
+import AboutOutcomesStrip from "@/components/about/AboutOutcomesStrip";
 import ConsultingProcessTimeline from "@/components/services/ConsultingProcessTimeline";
 import Reveal from "@/components/ui/Reveal";
-import { aboutCredentials, brochurePoints, faqItems, processSteps } from "@/lib/content";
+import { aboutCredentials, capabilityGroups, faqItems, outcomes, processSteps } from "@/lib/content";
 import { sectionBandClass } from "@/lib/cn";
 
 export const metadata: Metadata = {
@@ -50,26 +52,44 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={`border-b border-[var(--border)] section-pad ${sectionBandClass(1)}`}>
+      <section id="outcomes" className={`border-b border-[var(--border)] section-pad ${sectionBandClass(1)}`}>
         <div className="container-content">
           <Reveal>
-            <AboutCredentialsGrid items={aboutCredentials} />
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="eyebrow">Measured Outcomes</p>
+              <h2 className="text-3xl font-display sm:text-4xl">Results from recent plant engagements</h2>
+              <p className="mt-3 text-sm text-charcoal-muted sm:text-base">
+                Typical ranges from recovery audits, pneumatic retrofits, and stabilization work — not marketing averages
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={60} className="mt-10">
+            <AboutOutcomesStrip items={outcomes} />
           </Reveal>
         </div>
       </section>
 
       <section className={`border-b border-[var(--border)] section-pad ${sectionBandClass(2)}`}>
-        <div className="container-content grid items-center gap-10 lg:grid-cols-2">
+        <div className="container-content">
           <Reveal>
-            <AboutBrochureVisual />
-          </Reveal>
-          <Reveal delay={60}>
-            <AboutBrochurePanel points={brochurePoints} />
+            <div className="mx-auto mb-8 max-w-2xl text-center">
+              <p className="eyebrow">Our track record</p>
+              <h2 className="text-3xl font-display sm:text-4xl">Experience across markets and project types</h2>
+            </div>
+            <AboutCredentialsGrid items={aboutCredentials} />
           </Reveal>
         </div>
       </section>
 
       <section className={`border-b border-[var(--border)] section-pad ${sectionBandClass(3)}`}>
+        <div className="container-content">
+          <Reveal>
+            <AboutCapabilitiesSection groups={capabilityGroups} />
+          </Reveal>
+        </div>
+      </section>
+
+      <section className={`border-b border-[var(--border)] section-pad ${sectionBandClass(4)}`}>
         <div className="container-content">
           <Reveal>
             <p className="eyebrow">How We Work</p>
@@ -81,18 +101,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="faq" className={`section-pad ${sectionBandClass(4)}`}>
+      <section id="faq" className={`section-pad ${sectionBandClass(5)}`}>
         <div className="container-content max-w-3xl">
           <Reveal>
             <p className="eyebrow">FAQ</p>
-            <h2 className="text-3xl font-display">Questions mill owners ask when planning upgrades</h2>
+            <h2 className="text-3xl font-display">Questions about consulting, auxiliary machinery & spare parts</h2>
           </Reveal>
           <Reveal delay={60} className="mt-8">
             <AboutFaqAccordion items={faqItems} />
           </Reveal>
           <Reveal delay={100}>
             <p className="mt-8 text-sm text-charcoal-muted">
-              Still have questions about your upgrade?{" "}
+              Still have questions?{" "}
               <Link href="/contact" className="font-semibold text-olive hover:text-olive-dark">
                 Request a consultation
               </Link>{" "}

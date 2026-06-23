@@ -13,7 +13,7 @@ import {
 const industryLabels: Record<string, string> = {
   rice: "Rice mill",
   wheat: "Wheat / flour mill",
-  parboiling: "Parboiling unit",
+  pulses: "Pulse / lentil plant",
   cleaning: "Grain cleaning & grading",
   packaging: "Packaging / dispatch line",
   modernization: "Modernization or expansion",
@@ -225,7 +225,7 @@ export default function ContactForm() {
           <option value="">Select operation type</option>
           <option value="rice">Rice mill</option>
           <option value="wheat">Wheat / flour mill</option>
-          <option value="parboiling">Parboiling unit</option>
+          <option value="pulses">Pulse / lentil plant</option>
           <option value="cleaning">Grain cleaning & grading</option>
           <option value="packaging">Packaging / dispatch line</option>
           <option value="modernization">Modernization or expansion</option>

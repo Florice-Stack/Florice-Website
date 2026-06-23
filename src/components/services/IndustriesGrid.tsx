@@ -7,7 +7,7 @@ const industryVisuals: Record<string, { icon: LucideIcon; tone: string; bg: stri
   "Rice Milling": { icon: CircleDot, tone: "#7a5c1e", bg: "#f5efe3" },
   "Wheat Flour Milling": { icon: Wheat, tone: "#4a5568", bg: "#eef1f4" },
   "Grain Cleaning & Grading": { icon: Filter, tone: "#3d5c4a", bg: "#edf3f0" },
-  Parboiling: { icon: Droplets, tone: "#2f6f6d", bg: "#e6f6f4" },
+  "Pulses & Lentils": { icon: Droplets, tone: "#2f6f6d", bg: "#e6f6f4" },
   "Packaging Lines": { icon: Package, tone: "#5d4e67", bg: "#f3ebf4" },
   "Modernization Projects": { icon: Cpu, tone: "#3b5bdb", bg: "#e8f0fe" },
 };

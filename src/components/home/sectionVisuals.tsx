@@ -15,8 +15,21 @@ type SectionVisual = {
   bg: string;
 };
 
+export const homePillarVisuals: Record<string, SectionVisual> = {
+  services: { icon: ClipboardList, accent: "#5d4e67", bg: "#f0ebf4" },
+  machinery: { icon: Workflow, accent: "#7a5c1e", bg: "#f5efe3" },
+  "spare-parts": { icon: ShieldCheck, accent: "#3d5c4a", bg: "#edf3f0" },
+};
+
+export const homeSectorVisuals: Record<string, SectionVisual> = {
+  "Rice milling": { icon: CircleDot, accent: "#7a5c1e", bg: "#f5efe3" },
+  "Wheat & flour": { icon: Wheat, accent: "#4a5568", bg: "#eef1f4" },
+  "Pulses & grain": { icon: Gauge, accent: "#3b5bdb", bg: "#e8f0fe" },
+  "Handling systems": { icon: Workflow, accent: "#3d5c4a", bg: "#edf3f0" },
+};
+
 export const heroScopeVisuals: Record<string, SectionVisual> = {
-  "Rice & parboiling": { icon: CircleDot, accent: "#7a5c1e", bg: "#f5efe3" },
+  "Rice milling": { icon: CircleDot, accent: "#7a5c1e", bg: "#f5efe3" },
   "Wheat & flour": { icon: Wheat, accent: "#4a5568", bg: "#eef1f4" },
   "Handling systems": { icon: Workflow, accent: "#3d5c4a", bg: "#edf3f0" },
   "Project support": { icon: ClipboardList, accent: "#5d4e67", bg: "#f0ebf4" },

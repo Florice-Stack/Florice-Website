@@ -4,14 +4,13 @@ export const site = {
   email: "consult@floricemilling.com",
   phone: "+91 98765 43210",
   description:
-    "Independent consulting for rice mills, wheat flour mills, parboiling plants, and grain processing machinery optimization.",
+    "Vendor-neutral consulting, auxiliary machinery, and spare parts for rice mills, wheat flour mills, and grain processing plants",
 };
 
 export const navLinks = [
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Services & Projects" },
   { href: "/spare-parts", label: "Machinery & Spare Parts" },
   { href: "/milling-trains", label: "Milling Trains" },
-  { href: "/work", label: "Projects" },
   { href: "/about", label: "About & FAQ" },
 ] as const;
 
@@ -44,104 +43,128 @@ export type MachineryProduct = {
 };
 
 export const machineryIntro = {
-  eyebrow: "Complete plant lines",
-  title: "Machinery for grain processing plants",
+  eyebrow: "Auxiliary machinery",
+  title: "Material handling & plant auxiliaries",
   description:
-    "Complete milling and specialty grain lines — specified, sourced, and commissioned to your capacity and product mix.",
+    "We supply auxiliary machinery for grain and milling plants — belt and screw conveyors, bucket elevators, pneumatic lines, spouting, ducting, industrial magnets, tanks, and related equipment",
+  notListedNote:
+    "If your machine is not listed — no worries, reach out to us and we will arrange it",
+  notListedCta: "Request a quote",
 };
 
 export const machineryProducts: MachineryProduct[] = [
   {
-    id: "flour-mill",
-    anchor: "flour-mill-machinery",
-    title: "Flour Mill Machinery",
-    description: "Roller flour mill plants — cleaning through bagging with consistent extraction.",
-    tags: ["Break-reduction milling", "Plansifter lines"],
+    id: "belt-conveyor",
+    anchor: "belt-conveyor",
+    title: "Belt Conveyor",
+    description: "Trough and flat belt conveyors for grain, flour, bran, and bulk material transfer between process stages",
+    tags: ["Multi-ply belts", "Food-grade options"],
     image: {
-      src: "/machinery/plant-lines/flour-mill-machinery.png",
-      alt: "Roller flour mill system processing wheat into flour in an industrial milling plant",
+      src: "/machinery/auxiliary/belt-conveyor.png",
+      alt: "Industrial belt conveyor with rubber belt and galvanized frame for grain handling",
     },
   },
   {
-    id: "rice-mill",
-    anchor: "rice-mill-machinery",
-    title: "Rice Mill Machinery",
-    description: "Complete rice milling lines — cleaning, hulling, whitening, polishing, and grading.",
-    tags: ["Paddy to head rice", "Parboiling ready"],
+    id: "screw-conveyor",
+    anchor: "screw-conveyor",
+    title: "Screw Conveyor",
+    description: "Helical screw conveyors and feeders for controlled transfer of grain, flour, and by-products in enclosed troughs",
+    tags: ["Left & right helix", "Custom pitch & diameter"],
     image: {
-      src: "/machinery/plant-lines/rice-mill-machinery.png",
-      alt: "Industrial rice mill cleaning and grading machinery on a mill floor",
+      src: "/machinery/auxiliary/screw-conveyor.png",
+      alt: "Stainless steel screw conveyor with helical flight in an industrial trough",
     },
   },
   {
-    id: "pulse-plant",
-    anchor: "pulse-processing-plant",
-    title: "Pulse Processing Plant",
-    description: "Pulse de-husking, splitting, and grading lines sized for your throughput and variety.",
-    tags: ["Multi-pulse capable", "Silo integration"],
+    id: "bucket-elevator",
+    anchor: "bucket-elevator",
+    title: "Bucket Elevator",
+    description: "Vertical bucket elevators with MS or SS buckets, head and boot sections, and belt or chain drive for elevation duties",
+    tags: ["MS & SS buckets", "Head / boot assemblies"],
     image: {
-      src: "/machinery/plant-lines/pulse-processing-plant.png",
-      alt: "Pulse processing plant with sorting machinery, silos, and processed lentils in bins",
+      src: "/machinery/auxiliary/bucket-elevator.png",
+      alt: "Industrial bucket elevator with metal buckets on a rubber belt in a milling plant",
     },
   },
   {
-    id: "besan-plant",
-    anchor: "besan-plant",
-    title: "Besan Plant",
-    description: "Gram flour plants with precision milling, sifting, and dust-controlled bag-off.",
-    tags: ["Consistent particle size", "Food-grade design"],
+    id: "pneumatic-line",
+    anchor: "pneumatic-line",
+    title: "Pneumatic Conveying Line",
+    description: "Dense-phase and dilute-phase pneumatic lines with cyclones, airlocks, diverter gates, and blowers for grain and flour transfer",
+    tags: ["Cyclones & airlocks", "Diverter gates"],
     image: {
-      src: "/machinery/plant-lines/besan-plant.png",
-      alt: "Besan grinding machine processing chickpeas into gram flour beside labeled sacks",
+      src: "/machinery/auxiliary/pneumatic-line.png",
+      alt: "Pneumatic conveying line with cyclone separator and rotary airlock in a mill",
     },
   },
   {
-    id: "dalia-machine",
-    anchor: "dalia-making-machine",
-    title: "Dalia Making Machine",
-    description: "Broken wheat (dalia) lines with cutting, tempering, and uniform grading stages.",
-    tags: ["Capacity matched", "Stainless build"],
+    id: "spouting",
+    anchor: "spouting",
+    title: "Spouts & Spouting",
+    description: "Stainless and galvanized spouting, branch pipes, reducers, flow pipes, and observation glasses for gravity product routing",
+    tags: ["SS branch pipes", "Sight glasses"],
     image: {
-      src: "/machinery/plant-lines/dalia-making-machine.png",
-      alt: "Stainless steel dalia making machine discharging processed flakes into a collection bowl",
+      src: "/machinery/auxiliary/spouting.png",
+      alt: "Polished stainless steel spouting with branch pipe and sight glass in a milling plant",
     },
   },
   {
-    id: "energy-food",
-    anchor: "energy-food-plant",
-    title: "Energy Food Plant",
-    description: "Specialty grain and energy-food lines for blended, fortified, and ready-to-use products.",
-    tags: ["Multi-recipe staging", "Hygiene focused"],
+    id: "ducting",
+    anchor: "ducting",
+    title: "Ducting & Aspiration",
+    description: "Aspiration ducting, filter sleeves, jet filter components, and pneumatic ductwork for dust control and air handling",
+    tags: ["Filter sleeves", "Jet filter parts"],
     image: {
-      src: "/machinery/plant-lines/energy-food-plant.png",
-      alt: "Stainless steel energy food processing line with hopper, conveyors, and status lights",
+      src: "/machinery/auxiliary/ducting.png",
+      alt: "Industrial aspiration ducting with filter housing and flexible sleeves",
+    },
+  },
+  {
+    id: "magnets",
+    anchor: "industrial-magnets",
+    title: "Industrial Magnets",
+    description: "Tubular, grate, bar, and cylinder magnets for ferrous contamination control in intake and process lines",
+    tags: ["Tubular & grate types", "Inline installation"],
+    image: {
+      src: "/machinery/auxiliary/industrial-magnets.png",
+      alt: "Industrial tubular magnet with access door for grain cleaning line",
+    },
+  },
+  {
+    id: "tanks",
+    anchor: "storage-tanks",
+    title: "Tanks & Hoppers",
+    description: "Storage tanks, surge hoppers, dust-stop hoppers, and fabricated vessels for intake, buffering, and discharge duties",
+    tags: ["Custom fabrication", "Dust control hoppers"],
+    image: {
+      src: "/machinery/auxiliary/storage-tanks.png",
+      alt: "Industrial storage hopper and cylindrical tank in a grain processing plant",
     },
   },
 ];
 
 export const sparePartsIntro = {
-  title: "Machinery & spare parts for rice mills, flour mills, and grain processing plants",
+  title: "Auxiliary machinery & spare parts for rice mills, flour mills, and grain plants",
   description:
-    "Florice specifies and sources complete milling and processing lines — plus coordinates genuine spare parts for cleaning, milling, polishing, conveying, and aspiration equipment matched to your make, capacity, and wear pattern.",
-  note:
-    "For machinery projects, share capacity targets and product mix. For parts, send nameplate photos, part numbers, and quantity — we confirm fit and lead time before you order.",
+    "Auxiliary machinery and spare parts for cleaning, milling, conveying, and aspiration — matched to your equipment",
+  note: "Not in the catalogue? Send nameplate photos and part numbers — we confirm fit before you order",
 };
 
 export const sparePartsPrinciples = [
   {
     title: "Right part, first time",
     description:
-      "Parts are verified against machine model, TPH rating, and install history — not generic catalogue guesses.",
+      "Parts are verified against machine model, TPH rating, and install history — not generic catalogue guesses",
   },
   {
     title: "Competitive sourcing",
     description:
-      "We compare OEM, aftermarket, and workshop-fabricated options where appropriate, with clear trade-offs on life and cost.",
+      "We compare OEM, aftermarket, and workshop-fabricated options where appropriate, with clear trade-offs on life and cost",
   },
   {
     title: "Fastest practical delivery",
     description:
-      "Critical wear items — screens, rubber rolls, belts, and aspiration sleeves — prioritized to reduce unplanned downtime.",
+      "Critical wear items — screens, rubber rolls, belts, and aspiration sleeves — prioritized to reduce unplanned downtime",
   },
 ] as const;
 
@@ -149,345 +172,53 @@ export const sparePartsProcess = [
   {
     step: "1",
     title: "Identify",
-    description: "Share machine tag, worn part photos, and operating hours since last change.",
+    description: "Share machine tag, worn part photos, and operating hours since last change",
   },
   {
     step: "2",
     title: "Confirm fit",
-    description: "We cross-check dimensions, material spec, and compatible OEM or workshop sources.",
+    description: "We cross-check dimensions, material spec, and compatible OEM or workshop sources",
   },
   {
     step: "3",
     title: "Quote & ship",
-    description: "You receive itemized pricing, lead time, and packing list before dispatch.",
+    description: "You receive itemized pricing, lead time, and packing list before dispatch",
   },
   {
     step: "4",
     title: "Install support",
-    description: "Optional on-site or remote guidance for critical fits — whitener screens, cam sets, roll gaps.",
+    description: "Optional on-site or remote guidance for critical fits — whitener screens, cam sets, roll gaps",
   },
 ] as const;
 
 export const sparePartsQuoteIntro = {
-  title: "Request a machinery or spare parts quote",
+  title: "Request auxiliary machinery or spare parts quote",
   description:
-    "Tell us what you need — a complete line, upgraded section, or individual parts. We confirm scope, fit, and send pricing with lead time before you order.",
+    "Tell us what you need — conveyors, pneumatic lines, spouting, ducting, magnets, tanks, or individual spare parts. We confirm scope, fit, and send pricing with lead time before you order.",
   responseNote:
-    "Attach layout sketches or nameplate photos when you can. Breakdown part enquiries and greenfield machinery projects are both welcome.",
+    "Attach nameplate photos or layout sketches when you can. If your machine or part is not listed, reach out anyway — we will arrange it.",
 };
 
 export const sparePartsQuoteChecklist = [
-  "Machinery line type or spare part category",
-  "Target capacity (TPH) or machine manufacturer and model",
+  "Auxiliary machinery type or spare part category",
+  "Machine manufacturer, model, or target capacity (TPH)",
   "Part description, part number, or scope of supply",
   "Quantity required or project timeline",
-  "Whether this is a breakdown, planned shutdown, or greenfield project",
+  "Whether this is a breakdown, planned shutdown, or new installation",
 ];
 
 export const sparePartsClosingCta = {
   eyebrow: "Get a quote",
-  title: "Need a complete line, spare parts, or something not listed?",
+  title: "Need auxiliary equipment, spare parts, or something not listed?",
   paragraphs: [
-    "Greenfield flour mills, rice and pulse lines, besan and dalia plants — we scope machinery with vendor-neutral specs and commissioning support.",
-    "For breakdowns, mark your enquiry urgent and include photos. We prioritize screens, belts, rubber rolls, and aspiration items that block production.",
+    "We supply belt and screw conveyors, bucket elevators, pneumatic lines, spouting, ducting, magnets, tanks, and related auxiliaries — and source wear parts across rice, flour, and grain processing lines",
+    "If your machine or part is not in the catalogue, reach out anyway — send photos and part numbers and we will arrange it and confirm fit before dispatch",
   ],
   sparePartsButton: "Request machinery or parts quote",
   consultingButton: "View consulting services",
 };
 
-export const sparePartsCategories: SparePartCategory[] = [
-  {
-    id: "cleaning",
-    anchor: "cleaning-machines",
-    index: "01",
-    eyebrow: "Cleaning machines",
-    title: "Classifier, destoner & pre-cleaner spares",
-    description:
-      "Wooden decks, rubber valves, and inlet bags wear with abrasive paddy and wheat. Correct sieve aperture and deck tension protect downstream hullers and break rolls.",
-    machineTags: ["Classifier", "Destoner", "Pre-cleaner", "Gravity selector"],
-    parts: [
-      "Wooden frame classifier sieves and frame sets",
-      "Destoner wooden decks (standard and compact units)",
-      "Rubber valves — product and stone sides",
-      "Rubber hollow springs and inlet hose bags",
-      "Destoner wire mesh and nail sets",
-      "Aspiration inlet hoses and flexible connections",
-    ],
-    images: [
-      {
-        src: "/spare-parts/classifier-sieve-frame.png",
-        alt: "Wooden classifier sieve frame with perforated metal screens",
-        caption: "Wooden frame classifier sieves and frame sets",
-      },
-      {
-        src: "/spare-parts/inlet-flexible-connectors.png",
-        alt: "Rubber expansion joint and fabric inlet hose bag for cleaning machines",
-        caption: "Rubber hollow springs, inlet hose bags, and flexible connections",
-      },
-    ],
-  },
-  {
-    id: "separator",
-    anchor: "separators",
-    index: "02",
-    eyebrow: "Separators & grain cleaners",
-    title: "Universal separator & grain-plus spares",
-    description:
-      "Sieve frames and ball grounds affect throughput and overs carry-over. We match LKGA, TAS, and plant-specific separator configurations.",
-    machineTags: ["Universal separator", "Grain Plus", "LKGA", "TAS"],
-    parts: [
-      "Sieve with frame assemblies",
-      "LKGA and TAS slotted / round sieves",
-      "Ball grounds and rubber cleaning balls",
-      "Classifier lock and manual slide gates",
-      "Inlet chute liners and wear plates",
-    ],
-    images: [
-      {
-        src: "/spare-parts/lkga-tas-sieves.png",
-        alt: "LKGA slotted sieve and TAS round-hole sieve for universal separators",
-        caption: "LKGA and TAS slotted / round sieves",
-      },
-      {
-        src: "/spare-parts/separator-wear-plates.png",
-        alt: "Separator inlet chute with bolt-on wear plates and spare liner set",
-        caption: "Inlet chute liners and wear plates",
-      },
-    ],
-  },
-  {
-    id: "whitener",
-    anchor: "rice-whitener",
-    index: "03",
-    eyebrow: "Rice whitener",
-    title: "Whitener spares — 4, 8 & 16 TPH lines",
-    description:
-      "Screens, screw feeders, and wear rings define degree of milling and broken percentage. Grinding wheels and brake bars need periodic replacement on abrasive varieties.",
-    machineTags: ["Whitener 4 TPH", "Whitener 8 TPH", "Whitener 16 TPH", "MM whitener"],
-    parts: [
-      "SS hardened screens and sieve frames",
-      "Screw feeders and brake bars",
-      "Wear rings, clamping levers, and grinding flanges",
-      "Grinding wheels — Ø450, Ø340, and Ø250 mm",
-      "Rotor shafts, bush sets, and outlet rings",
-    ],
-    images: [
-      {
-        src: "/spare-parts/whitener-grinding-wheels.png",
-        alt: "Whitener grinding wheels in 450 mm, 340 mm, and 250 mm diameters",
-        caption: "Grinding wheels — Ø450, Ø340, and Ø250 mm",
-      },
-      {
-        src: "/spare-parts/whitener-shafts-bush-outlet-ring.png",
-        alt: "Whitener rotor shafts, bush set, and stainless outlet ring",
-        caption: "Rotor shafts, bush sets, and outlet rings",
-      },
-    ],
-  },
-  {
-    id: "polisher",
-    anchor: "rice-polisher",
-    index: "04",
-    eyebrow: "Rice polisher",
-    title: "Polisher spares — 8 & 16 TPH",
-    description:
-      "Cam profiles, mixing tubes, and reducer rings control silky finish and brokens. Timing belts and cam trays are common failure points on high-duty lines.",
-    machineTags: ["Polisher 8 TPH", "Polisher 16 TPH", "Silky polisher"],
-    parts: [
-      "Polisher screens and sieve frames",
-      "Screw feeders, mixing tubes, and reducer rings",
-      "Taper and straight cams with cam teeth",
-      "Cam hubs, cam tray weldments, and baffle rings",
-      "Rotor shafts, eye bolts, nylock nuts, and timing belts",
-      "Outlet rings (SS) and artificial bristle pipes",
-    ],
-    images: [
-      {
-        src: "/spare-parts/polisher-cams-gears.png",
-        alt: "Polisher taper cam, straight cam, and cam hub gear set",
-        caption: "Taper and straight cams with cam teeth",
-      },
-      {
-        src: "/spare-parts/polisher-nuts-bristle-pipe.png",
-        alt: "Polisher nylock nuts, artificial bristle brushes, and mixing tube",
-        caption: "Eye bolts, nylock nuts, and artificial bristle pipes",
-      },
-    ],
-  },
-  {
-    id: "paddy",
-    anchor: "paddy-separator",
-    index: "05",
-    eyebrow: "Paddy separator",
-    title: "Paddy separator & slide gate spares",
-    description:
-      "Knife edges and chute assemblies affect brown rice recovery from the separator. Left/right chute fit must match your machine orientation.",
-    machineTags: ["Paddy separator", "Slide gate", "Hulling line"],
-    parts: [
-      "Left and right inlet chute assemblies",
-      "Paddy plates and knife edge supporters",
-      "Knife edge sets and classifier locks",
-      "Manual slide gate parts and seals",
-    ],
-    images: [
-      {
-        src: "/spare-parts/paddy-knife-edge-plates.png",
-        alt: "Paddy separator knife edge plates and knife edge supporter assembly",
-        caption: "Paddy plates, knife edge sets, and classifier locks",
-      },
-      {
-        src: "/spare-parts/paddy-slide-gate-parts.png",
-        alt: "Manual slide gate rollers, seals, profiles, and mounting hardware",
-        caption: "Manual slide gate parts and seals",
-      },
-    ],
-  },
-  {
-    id: "huller",
-    anchor: "huller-husk",
-    index: "06",
-    eyebrow: "Huller & husk handling",
-    title: "Rubber roll huller & husk separator spares",
-    description:
-      "Fan wheels, paddles, and husker shafts sustain hulling duty cycles. SS paddles and U-bolt sets are stocked for common OEM layouts.",
-    machineTags: ["Rubber roll huller", "Husk separator", "Husker fan"],
-    parts: [
-      "Rubber rolls and roll housing consumables",
-      "Husker shafts, adopters, and U-bolt sets",
-      "Fan wheels and SS paddles",
-      "Screw conveyor and paddle shafts",
-      "Husk pneumatic line wear parts",
-    ],
-    images: [
-      {
-        src: "/spare-parts/husk-pneumatic-wear-parts.png",
-        alt: "Husk pneumatic line wear parts including flanges, elbows, and mounting hardware",
-        caption: "Husk pneumatic line wear parts",
-      },
-      {
-        src: "/spare-parts/huller-screw-paddle-shafts.png",
-        alt: "Huller screw conveyor auger and SS paddle shaft assemblies",
-        caption: "Screw conveyor and paddle shafts",
-      },
-    ],
-  },
-  {
-    id: "flour-prep",
-    anchor: "flour-scourer-dampener",
-    index: "07",
-    eyebrow: "Wheat preparation",
-    title: "Scourer, dampener & intensive dampener spares",
-    description:
-      "Beaters and jackets wear against sand and dockage in incoming wheat. Correct beat pattern preserves bran release in later break passes.",
-    machineTags: ["Scourer", "Dampener", "Intensive dampener", "Bran duster"],
-    parts: [
-      "Scourer beaters and jackets with frames",
-      "Dampener beaters and rotor shafts",
-      "Scourer outlet and wear liners",
-      "Bran duster screens and beaters",
-    ],
-    images: [
-      {
-        src: "/spare-parts/scourer-dampener-beaters.png",
-        alt: "Scourer and dampener beater assemblies with rotor shafts",
-        caption: "Scourer beaters and dampener rotor shafts",
-      },
-      {
-        src: "/spare-parts/scourer-screens-paddle-shaft.png",
-        alt: "Scourer wire mesh screens and bran duster paddle shaft",
-        caption: "Scourer jackets, bran duster screens, and beaters",
-      },
-    ],
-  },
-  {
-    id: "sifter",
-    anchor: "plansifter",
-    index: "08",
-    eyebrow: "Plansifter & aspiration",
-    title: "Sifter frames, sieves & aspiration parts",
-    description:
-      "Wooden, aluminum insert, and plastic sifter frames each need matched sieves and cleaning accessories. Aspiration sleeves and filter media protect downstream air quality.",
-    machineTags: ["Plansifter", "Control sifter", "Purifier", "Aspiration"],
-    parts: [
-      "Wooden, aluminum insert, and plastic sifter frames",
-      "Perforated sieves and bran sifter sieves",
-      "Sifter cleaning pads and roll brushes",
-      "Filter sleeves and aspiration rubber sleeves",
-      "Rubber caps and acrylic sight-glass fittings",
-      "SS pipe fittings for pneumatic and spout lines",
-    ],
-    images: [
-      {
-        src: "/spare-parts/sifter-rubber-caps-sight-glass.png",
-        alt: "Aspiration rubber caps, sleeves, and acrylic sight-glass fittings",
-        caption: "Rubber caps and acrylic sight-glass fittings",
-      },
-      {
-        src: "/spare-parts/sifter-ss-pipe-fittings.png",
-        alt: "Stainless steel pipe fittings for pneumatic and spout lines",
-        caption: "SS pipe fittings for pneumatic and spout lines",
-      },
-    ],
-  },
-  {
-    id: "conveying",
-    anchor: "conveying",
-    index: "09",
-    eyebrow: "Conveying & elevation",
-    title: "Bucket elevator, belt & screw conveyor spares",
-    description:
-      "Belts, buckets, and pulleys set the real plant capacity ceiling. Multi-ply belts and HRC rubber belts suit abrasive flour and bran duties.",
-    machineTags: ["Bucket elevator", "Belt conveyor", "Screw conveyor", "Drag chain"],
-    parts: [
-      "MS and SS elevator buckets",
-      "Rubber belts, multi-ply belts, and HRC belts",
-      "Timing pulleys, timer belts, and general pulleys",
-      "Screw conveyor paddles and trough liners",
-      "Blowthrough airlocks and diverter wear parts",
-    ],
-    images: [
-      {
-        src: "/spare-parts/conveying-belts.png",
-        alt: "Elevator rubber belts, timing belts, and V-belt sections",
-        caption: "Rubber belts, multi-ply belts, and timing belts",
-      },
-      {
-        src: "/spare-parts/conveying-screw-auger.png",
-        alt: "Screw conveyor auger flight assembly in trough",
-        caption: "Screw conveyor paddles and trough liners",
-      },
-    ],
-  },
-  {
-    id: "general",
-    anchor: "general-spares",
-    index: "10",
-    eyebrow: "General mill spares",
-    title: "Fabricated structures & miscellaneous wear",
-    description:
-      "Spouting, ducting, and custom fabricated items complement catalogue parts — especially on brownfield lines with non-standard layouts.",
-    machineTags: ["Spouting", "Ducting", "Custom fabrication"],
-    parts: [
-      "Galvanized and SS spouting sections",
-      "Aspiration ducting and cyclone internals",
-      "Custom sieve frames and wooden decks with wire mesh",
-      "Magnet trap elements and inspection hatches",
-      "General mill hardware and clamp sets",
-    ],
-    images: [
-      {
-        src: "/spare-parts/general-mill-hardware.png",
-        alt: "General mill hardware including bolts, nuts, washers, and C-clamps",
-        caption: "General mill hardware and clamp sets",
-      },
-      {
-        src: "/spare-parts/general-cyclones-magnet-trap.png",
-        alt: "Stainless cyclone housings, magnet trap grate, and inspection hatch",
-        caption: "Aspiration cyclone internals, magnet traps, and inspection hatches",
-      },
-    ],
-  },
-];
+export { sparePartsCategories } from "@/lib/sparePartsCatalogData";
 
 export type MillingTrainStepDetail = {
   id: string;
@@ -522,7 +253,7 @@ export const riceMillingTrain: MillingTrainDetail = {
   title: "From paddy intake to head rice bagging",
   overview:
     "Paddy becomes head rice, brokens, and by-products. Balance hulling, whitening, and broken % — especially when variety or moisture shifts between seasons.",
-  typicalPlants: "Raw, parboiled, and basmati lines · 2–20+ TPH",
+  typicalPlants: "Raw and basmati lines · 2–20+ TPH",
   keyMetrics: ["Head rice %", "Broken %", "Degree of milling", "Whitener power"],
   infrastructure:
     "Aspiration, pneumatic lifts, and elevators tie stages together. Air balance issues here often mimic whitener or grader faults.",
@@ -531,7 +262,7 @@ export const riceMillingTrain: MillingTrainDetail = {
       id: "intake",
       title: "Paddy intake",
       description:
-        "Paddy from field, drier, or parboiling line into silos or day bins. Moisture, variety, and trash at intake cap downstream recovery.",
+        "Paddy from field or drier into silos or day bins. Moisture, variety, and trash at intake cap downstream recovery.",
       equipment: ["Intake pits", "Pre-hoppers", "Magnets"],
       consultingFocus: "Capacity matching, moisture tracking, even draw to pre-clean.",
     },
@@ -649,10 +380,101 @@ export const flourMillingTrain: MillingTrainDetail = {
   ],
 };
 
+export const homeHero = {
+  eyebrow: "Florice Milling Spare & Solution",
+  title: "Consulting, auxiliary machinery & spare parts for rice, flour & grain plants",
+  description:
+    "One vendor-neutral partner — project delivery, plant auxiliaries, and wear-part supply from feasibility through dispatch",
+  image: {
+    src: "/home/carousel/plant-installation.png",
+    alt: "Engineering team supervising machinery installation in a food processing plant",
+  },
+  primaryCta: { label: "Book a Consultation", href: "/contact" },
+  secondaryCta: { label: "Request Machinery or Parts", href: "/spare-parts/quote" },
+} as const;
+
+export const homeTrustLine = [
+  { value: "20+", label: "Years in grain processing" },
+  { value: "18", label: "Countries with on-site work" },
+  { value: "0", label: "Equipment sales commissions" },
+  { value: "Vendor-neutral", label: "Independent specs & sourcing" },
+] as const;
+
+export const homePillars = [
+  {
+    id: "services",
+    eyebrow: "Services & Projects",
+    title: "Consulting, project management & operational support",
+    highlights: [
+      "Greenfield & brownfield — feasibility through commissioning",
+      "Audits, retrofits, operator training & contract mill operation",
+      "Itemised Total Plant Cost Sheets before procurement",
+    ],
+    href: "/services",
+    cta: "View services",
+  },
+  {
+    id: "machinery",
+    eyebrow: "Auxiliary Machinery",
+    title: "Material handling & plant auxiliaries",
+    highlights: [
+      "Conveyors, elevators & pneumatic conveying lines",
+      "Spouting, ducting, magnets, tanks & custom vessels",
+      "Machine not listed — reach out and we will arrange it",
+    ],
+    href: "/spare-parts#machinery-lines",
+    cta: "Browse machinery",
+  },
+  {
+    id: "spare-parts",
+    eyebrow: "Spare Parts",
+    title: "Wear parts for rice, flour & grain lines",
+    highlights: [
+      "Whitener, polisher, plansifter & cleaning machine spares",
+      "Fit confirmed against machine tag before dispatch",
+      "Part not in catalogue — send nameplate photos",
+    ],
+    href: "/spare-parts",
+    cta: "Browse spare parts",
+  },
+] as const;
+
+export const homeSectors = [
+  {
+    title: "Rice milling",
+    description: "Paddy cleaning, hulling, whitening, polishing & grading",
+  },
+  {
+    title: "Wheat & flour",
+    description: "Conditioning, break-reduction, purifiers, plansifters & mixing",
+  },
+  {
+    title: "Pulses & grain",
+    description: "Cleaning, de-stoning, grinding & value-added processing lines",
+  },
+  {
+    title: "Handling systems",
+    description: "Elevators, pneumatic conveying, spouting, ducting & cyclones",
+  },
+] as const;
+
+export const homeClosingCta = {
+  consulting: {
+    title: "Planning a project, audit, or line upgrade?",
+    description: "Share plant capacity, grain type, and your bottleneck — we respond within one business day",
+    cta: { label: "Book a Consultation", href: "/contact" },
+  },
+  supply: {
+    title: "Need auxiliary equipment or wear parts?",
+    description: "Send machine tag, part photos, or scope — we confirm fit and quote before dispatch",
+    cta: { label: "Request Machinery or Parts", href: "/spare-parts/quote" },
+  },
+} as const;
+
 export const heroScope = [
   {
-    title: "Rice & parboiling",
-    description: "Paddy cleaning, hulling, whitening, polishing, soaking, steaming, drying",
+    title: "Rice milling",
+    description: "Paddy cleaning, hulling, whitening, polishing, and grading",
   },
   {
     title: "Wheat & flour",
@@ -686,9 +508,453 @@ export const missionItems = [
   },
 ];
 
+export const consultingPage = {
+  hero: {
+    eyebrow: "Technical Consulting",
+    title: "Services & Projects",
+    description: "Consulting Services & Project Management for Greenfield & Brownfield Plants — from Design through Commissioning and Operational Support",
+    image: {
+      src: "/home/carousel/plant-installation.png",
+      alt: "Engineering team supervising machinery installation in a food processing plant",
+    },
+  },
+  totalPlantCostCallout: "Total Plant Cost Sheets — Itemised CAPEX before Procurement",
+};
+
+export type ConsultingScopePillar = {
+  id: string;
+  label: string;
+  detail: string;
+  details: {
+    overview: string;
+    highlights: string[];
+  };
+};
+
+export const consultingScopePillars: ConsultingScopePillar[] = [
+  {
+    id: "greenfield-brownfield",
+    label: "Greenfield & Brownfield",
+    detail: "New · Expand · Modernise",
+    details: {
+      overview:
+        "Consulting for new plant builds, capacity expansions, and modernisation of existing mills — scoped to your commodity, throughput, and budget.",
+      highlights: [
+        "Greenfield feasibility and layout planning",
+        "Brownfield expansion without halting production",
+        "Equipment upgrade and line modernisation",
+        "Phased execution with defined downtime windows",
+      ],
+    },
+  },
+  {
+    id: "design-commissioning",
+    label: "Design to Commissioning",
+    detail: "Feasibility · Erection · Startup",
+    details: {
+      overview:
+        "End-to-end project support from techno-economic feasibility through engineering, erection oversight, and first production runs.",
+      highlights: [
+        "TEFR and technical project profiles",
+        "Layout, machinery specs, and process flow design",
+        "Erection, aspiration, and BOM support",
+        "Startup parameter tuning and operator handover",
+      ],
+    },
+  },
+  {
+    id: "cost-controlled",
+    label: "Cost-Controlled",
+    detail: "CAPEX Sheets & Tracking",
+    details: {
+      overview:
+        "Itemised Total Plant Cost Sheets and strict CAPEX tracking — machinery, fabrication, utilities, and infrastructure budgeted before procurement.",
+      highlights: [
+        "Itemised capital expenditure breakdowns",
+        "Machinery, fabrication, and utility cost lines",
+        "Vendor evaluation with commercial comparison",
+        "Budget control through erection and commissioning",
+      ],
+    },
+  },
+];
+
+export type ConsultingSector = {
+  title: string;
+  applications: string[];
+  image: {
+    src: string;
+    alt: string;
+  };
+  details: {
+    overview: string;
+    highlights: string[];
+  };
+};
+
+export const consultingSectors: ConsultingSector[] = [
+  {
+    title: "Rice & Paddy",
+    applications: ["Rice Milling", "Paddy Drying", "Grist Milling"],
+    image: {
+      src: "/services/sectors/rice-paddy.png",
+      alt: "Workers overseeing tiered grain drying racks and stainless steel processing equipment in a rice mill",
+    },
+    details: {
+      overview:
+        "Complete consulting for modern rice mills and paddy handling — from intake through head rice recovery and by-product routing.",
+      highlights: [
+        "2–40 TPH modern rice milling lines",
+        "Paddy drying and moisture management systems",
+        "Rice grist and broken rice milling trains",
+        "Whitener, polisher, and grading train optimisation",
+      ],
+    },
+  },
+  {
+    title: "Flour & Grain Milling",
+    applications: ["Wheat Flour", "Chakki Atta", "Maize", "Semolina", "Daliya"],
+    image: {
+      src: "/services/sectors/flour-grain-milling.png",
+      alt: "Stainless steel grain silos and roller milling equipment in a flour and grain processing plant",
+    },
+    details: {
+      overview:
+        "Roller flour mills, whole chakki atta plants, maize milling, semolina, and daliya lines — specified and commissioned to your ash, moisture, and extraction targets.",
+      highlights: [
+        "Break-reduction milling and plansifter lines",
+        "Whole chakki atta and specialty flour grades",
+        "Maize grits, semolina, and daliya processing",
+        "Tempering, purifier, and bran finishing systems",
+      ],
+    },
+  },
+  {
+    title: "Pulses & Lentils",
+    applications: ["Pulse Milling", "Lentil Processing"],
+    image: {
+      src: "/machinery/plant-lines/pulse-processing-plant.png",
+      alt: "Pulse processing and de-husking plant line",
+    },
+    details: {
+      overview:
+        "Pulse de-husking, splitting, and grading plants sized for your throughput, variety mix, and finished product specification.",
+      highlights: [
+        "Pre-cleaning and de-stoning upstream of de-huskers",
+        "Splitting, polishing, and grading passages",
+        "Capacity-matched conveying and aspiration",
+        "Dust control and bagging line integration",
+      ],
+    },
+  },
+  {
+    title: "Value-Added Processing",
+    applications: ["Pasta", "Seed Processing", "Dry Fruit Grading"],
+    image: {
+      src: "/home/carousel/food-processing-line.png",
+      alt: "Automated food packaging and processing line",
+    },
+    details: {
+      overview:
+        "Specialty processing lines beyond standard grain milling — pasta extrusion, seed conditioning, and dry fruit grading with packaging integration.",
+      highlights: [
+        "Pasta plant layout and process engineering",
+        "Seed cleaning, treating, and bagging lines",
+        "Dry fruit grading, sorting, and packaging",
+        "Utility load and hygiene zone planning",
+      ],
+    },
+  },
+  {
+    title: "Logistics & Biofuels",
+    applications: ["Grain Storage", "Ethanol Milling Sections"],
+    image: {
+      src: "/services/sectors/logistics-biofuels.png",
+      alt: "Grain silos and ethanol plant infrastructure with bulk feedstock storage and transfer systems",
+    },
+    details: {
+      overview:
+        "Grain logistics, silo storage, and ethanol plant cleaning and milling sections — engineered for reliable intake, transfer, and preparation upstream of fermentation.",
+      highlights: [
+        "Intake pits, pre-cleaners, and silo sizing",
+        "Pneumatic and mechanical conveying networks",
+        "Ethanol plant cleaning and milling sections",
+        "Load analysis for storage and transfer structures",
+      ],
+    },
+  },
+  {
+    title: "Other Agro-Based Products",
+    applications: ["Custom Commodity Processing"],
+    image: {
+      src: "/machinery/plant-lines/besan-plant.png",
+      alt: "Besan and specialty grain processing plant",
+    },
+    details: {
+      overview:
+        "Custom processing solutions for diverse agricultural commodities — besan, specialty flours, and niche grain products with tailored flow diagrams.",
+      highlights: [
+        "Commodity-specific cleaning and grinding trains",
+        "Besan and gram flour plant engineering",
+        "Flexible layout for multi-product lines",
+        "Feasibility and CAPEX scoping for new products",
+      ],
+    },
+  },
+];
+
+export type ProjectManagementPhase = {
+  step: string;
+  title: string;
+  tags: string[];
+  details: {
+    overview: string;
+    highlights: string[];
+  };
+};
+
+export const projectManagementPhases: ProjectManagementPhase[] = [
+  {
+    step: "01",
+    title: "Pre-Engineering & Reporting",
+    tags: ["TEFR", "Project Profiles", "Feasibility"],
+    details: {
+      overview:
+        "Techno-economic feasibility and technical project profiles for investors, lenders, and internal approval before detailed engineering begins.",
+      highlights: [
+        "Techno-Economic Feasibility Reports (TEFR)",
+        "Capacity, product mix, and utility assumptions",
+        "Preliminary CAPEX and operating cost estimates",
+        "Technical project profiles for stakeholder review",
+      ],
+    },
+  },
+  {
+    step: "02",
+    title: "Layout & Engineering Drawings",
+    tags: ["Layout Design", "Load Analysis", "Building Integration"],
+    details: {
+      overview:
+        "Complete layout drawings with structural load data and building integration details — floor cutouts, load distributions, and equipment disposition.",
+      highlights: [
+        "Layout with cross-sections and longitudinal details",
+        "Equipment load analysis for foundations",
+        "Building disposition and floor cutout drawings",
+        "Clearance and maintenance access planning",
+      ],
+    },
+  },
+  {
+    step: "03",
+    title: "Technological Project Design",
+    tags: ["Machinery Specs", "Electrical Loads", "Process Flow", "CAPEX Sheet"],
+    details: {
+      overview:
+        "Full technological design — machinery specifications, electrical loads, process flowcharts, vendor evaluation, and itemised Total Plant Cost Sheets.",
+      highlights: [
+        "Machinery and equipment specifications",
+        "Motor lists, electrical load charts, and transformer sizing",
+        "Milling flowcharts tracking stock movement",
+        "Vendor evaluation matrices and Total Plant Cost Sheets",
+      ],
+    },
+  },
+  {
+    step: "04",
+    title: "Erection & Commissioning",
+    tags: ["BOM & Spouting", "Aspiration Drawings", "Site Management"],
+    details: {
+      overview:
+        "Execution support from BOM generation through erection oversight — spouting lists, aspiration drawings, and on-site manpower planning.",
+      highlights: [
+        "Bill of Materials, spouting lists, and fabrication estimates",
+        "Exhaust and aspiration system drawings",
+        "Erection sequencing and site manpower planning",
+        "Pre-start checklists and commissioning oversight",
+      ],
+    },
+  },
+  {
+    step: "05",
+    title: "Local Fabrication Know-How",
+    tags: ["Aspiration Systems", "Spouting & Ducts", "Conveyors & Elevators"],
+    details: {
+      overview:
+        "Technical blueprints and parameters for locally fabricated utility and transfer components — reducing import dependency and lead times.",
+      highlights: [
+        "Aspiration systems, cyclones, and airlocks",
+        "Spouting, gravity pipes, bends, and taper transitions",
+        "Distributing spouting, valves, and outlet hoppers",
+        "Screw conveyors, elevators, and sacking benches",
+      ],
+    },
+  },
+  {
+    step: "06",
+    title: "Procurement & Startup",
+    tags: ["Vendor Selection", "Contractor Hiring", "Parameter Tuning"],
+    details: {
+      overview:
+        "Expert procurement guidance and on-site startup support — machinery selection, contractor evaluation, and milling parameter optimisation.",
+      highlights: [
+        "Machinery and fabrication material selection",
+        "Specialised contractor personnel evaluation",
+        "On-site guidance during first production runs",
+        "Parameter lock-in and operator handover",
+      ],
+    },
+  },
+];
+
+export type PostCommissioningService = {
+  title: string;
+  tagline: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  details: {
+    overview: string;
+    highlights: string[];
+  };
+};
+
+export const postCommissioningServices: PostCommissioningService[] = [
+  {
+    title: "Contract Mill Operation",
+    tagline: "Full Plant Operations under Florice Oversight",
+    image: {
+      src: "/services/operational/contract-mill-operation.png",
+      alt: "Engineers supervising stainless steel grain processing equipment during active mill operation",
+    },
+    details: {
+      overview:
+        "Florice takes complete operational responsibility for your mill — shift planning, parameter control, quality checks, and daily production reporting under senior technical oversight.",
+      highlights: [
+        "End-to-end shift and production management",
+        "Recovery, broken %, and moisture targets tracked daily",
+        "Operator supervision and process parameter lock-in",
+        "Monthly performance reports for owners and lenders",
+      ],
+    },
+  },
+  {
+    title: "Plant Performance Audits",
+    tagline: "Yield, Power, Wear & Machine Settings",
+    image: {
+      src: "/services/operational/plant-performance-audits.png",
+      alt: "Plant engineers reviewing performance data and production metrics on the mill floor",
+    },
+    details: {
+      overview:
+        "Structured audits of running plants to benchmark machinery performance, power draw, wear patterns, and machine settings — with a prioritised action register for yield and uptime gains.",
+      highlights: [
+        "Head rice / flour extraction and broken % benchmarking",
+        "Power consumption per tonne by machine and line section",
+        "Wear inspection on rolls, screens, and aspiration elements",
+        "Machine setting review with before/after recovery targets",
+      ],
+    },
+  },
+  {
+    title: "Plant Retrofits",
+    tagline: "Capacity & Quality Upgrades",
+    image: {
+      src: "/services/operational/plant-retrofits.png",
+      alt: "Technician monitoring upgraded milling machinery with a tablet on the production floor",
+    },
+    details: {
+      overview:
+        "Engineering upgrades to raise capacity, improve product grade consistency, or modernise ageing equipment — scoped and phased to minimise production downtime.",
+      highlights: [
+        "Capacity expansion and bottleneck removal studies",
+        "Whitener, plansifter, and pneumatic line upgrades",
+        "PLC / SCADA visibility and interlock improvements",
+        "Phased execution with defined downtime windows",
+      ],
+    },
+  },
+  {
+    title: "Maintenance Support",
+    tagline: "AMC & 48-Hour Breakdown Response",
+    image: {
+      src: "/services/operational/maintenance-support.png",
+      alt: "Maintenance technicians servicing industrial milling equipment on site",
+    },
+    details: {
+      overview:
+        "On-call technical support for breakdown diagnosis, spare parts identification, and corrective action — including Annual Maintenance Contracts and emergency site visits within 48 hours.",
+      highlights: [
+        "Root-cause diagnosis for blockages, trips, and grade drift",
+        "Annual Maintenance Contracts (AMC) for planned upkeep",
+        "Emergency breakdown visits within 48 hours",
+        "Spare parts specification and sourcing coordination",
+      ],
+    },
+  },
+  {
+    title: "Workforce Training",
+    tagline: "Operator & Maintenance Programs",
+    image: {
+      src: "/services/operational/workforce-training.png",
+      alt: "Consultant leading a technical training session with plant staff on the factory floor",
+    },
+    details: {
+      overview:
+        "Hands-on training programs for plant operators and maintenance teams — covering machine settings, cleaning procedures, safety interlocks, and basic troubleshooting on your equipment.",
+      highlights: [
+        "Operator training on roll gaps, air gates, and feed rates",
+        "Maintenance team briefings on wear parts and lubrication schedules",
+        "Shift handover and quality-check SOP development",
+        "On-site sessions tailored to your milling train layout",
+      ],
+    },
+  },
+];
+
+export type ConsultingValueProp = {
+  title: string;
+  tagline: string;
+  details: {
+    overview: string;
+    highlights: string[];
+  };
+};
+
+export const consultingValueProps: ConsultingValueProp[] = [
+  {
+    title: "End-to-End Expertise",
+    tagline: "Raw Intake to Final Packaging",
+    details: {
+      overview:
+        "Practical, expert advice spanning raw material intake through milling, handling, and final packaging — not isolated equipment recommendations.",
+      highlights: [
+        "Feasibility, layout, and process design in one scope",
+        "Vendor-neutral machinery and fabrication specifications",
+        "Erection oversight and commissioning support",
+        "Post-startup audits, training, and operational guidance",
+      ],
+    },
+  },
+  {
+    title: "Unmatched Value",
+    tagline: "Engineering that Maximises ROI",
+    details: {
+      overview:
+        "High-utility engineering focused on recovery, uptime, and capital efficiency — so every project phase returns measurable value to your operation.",
+      highlights: [
+        "Total Plant Cost Sheets before procurement commits spend",
+        "Right-sized equipment matched to actual throughput",
+        "Phased upgrades that minimise downtime and rework",
+        "Independent consulting with no equipment sales commissions",
+      ],
+    },
+  },
+];
+
 export const services = [
   {
-    tag: "Rice · Wheat · Parboiling",
+    tag: "Rice · Wheat · Pulses",
     title: "Plant Assessment",
     description:
       "Walk-through of your milling train with recovery mapping at each stage — from paddy intake or wheat conditioning through final grading and bagging.",
@@ -776,9 +1042,9 @@ export const industries = [
   },
   {
     label: "Process",
-    title: "Parboiling",
+    title: "Pulses & Lentils",
     description:
-      "Batch and continuous soaking, steaming vessels, and dryer integration — gelatinization control, steam distribution, and energy balance before milling.",
+      "Pulse de-husking, splitting, and grading lines sized for throughput, variety mix, and finished product specification.",
   },
   {
     label: "Dispatch",
@@ -830,180 +1096,121 @@ export const processSteps = [
 export const outcomes = [
   {
     value: "+2–5%",
-    title: "Head rice / flour recovery",
+    title: "Recovery on tuned lines",
     description:
-      "Typical gain from whitener train rebalancing, screen changes, and feed rate correction — verified against monthly production reports.",
+      "Head rice or flour yield gains documented on monthly production reports after whitener, break, or grading corrections",
   },
   {
     value: "−30%",
-    title: "Unplanned stoppages",
+    title: "Unplanned stops",
     description:
-      "Fewer pneumatic blockages, elevator overload trips, and emergency clean-outs after duct sizing and interlock corrections.",
+      "Fewer pneumatic blockages, elevator trips, and emergency clean-outs following duct sizing and interlock fixes",
   },
   {
-    value: "Spec'd",
-    title: "Right-sized equipment",
+    value: "−14%",
+    title: "Aspiration load",
     description:
-      "Machinery matched to paddy variety, moisture range, and actual TPH — avoiding overspend on capacity you cannot feed consistently.",
+      "Motor draw reduction on break-system retrofits where cyclone choke and duct velocity were the root cause",
   },
   {
-    value: "Held",
-    title: "Stable shift parameters",
+    value: "6 wks",
+    title: "To stable operation",
     description:
-      "Documented roll settings, air volumes, and grading splits that operators maintain without constant supervisor intervention.",
+      "Typical window from first site visit to locked shift parameters and operator sign-off on focused engagements",
   },
-];
-
-export const projects = [
-  {
-    meta: "Rice mill · Andhra Pradesh · 12 TPH · 6-week engagement",
-    title: "Multi-stage whitener recovery audit",
-    result: "Head rice: 58.1% → 63.4%",
-    problem:
-      "Basmati variety switch dropped head rice 4 points; broken rose to 22%. Operators over-compensating on final polisher.",
-    scope:
-      "Rubber roll gap audit on huller, MM whitener screen sizing, air gate calibration on silky polisher, and length grader re-split.",
-    outcome:
-      "Head rice restored to 63.4% within six weeks. Broken reduced to 18.6%. Power draw on whitening section down 8%.",
-    type: "rice" as const,
-    highlights: ["Huller roll gaps", "Whitener screens", "Length grader", "Silky polisher air gates"],
-    metrics: [
-      { label: "Head rice", before: "58.1%", after: "63.4%" },
-      { label: "Broken rice", before: "22%", after: "18.6%" },
-      { label: "Whitening power", before: "Baseline", after: "−8%" },
-    ],
-  },
-  {
-    meta: "Flour mill · Punjab · 200 TPD · Pneumatic retrofit",
-    title: "Break system aspiration & conveying",
-    result: "Blockages: −72% · Aspiration kW: −14%",
-    problem:
-      "Daily blockages on pneumatic lift to plansifter floor. Cyclone choke causing break passage starvation and ash drift on maida stream.",
-    scope:
-      "Duct velocity survey, cyclone and rotary valve replacement spec, PLC pressure interlocks, and rotary valve maintenance schedule.",
-    outcome:
-      "Blockage incidents dropped from 11/month to 3. Aspiration motor load reduced 14%. Maida ash stabilized within grade spec.",
-    type: "flour" as const,
-    highlights: ["Duct velocity survey", "Cyclone spec", "PLC interlocks", "Rotary valve PM"],
-    metrics: [
-      { label: "Blockages / month", before: "11", after: "3" },
-      { label: "Aspiration load", before: "Baseline", after: "−14%" },
-      { label: "Maida ash", before: "Out of spec", after: "In grade" },
-    ],
-  },
-  {
-    meta: "Parboiling · Nigeria · 8 TPH greenfield · Commissioning",
-    title: "Steaming & drying line startup",
-    result: "Design capacity in 22 days",
-    problem:
-      "New soaking tanks and vertical steamer failing gelatinization targets. Dryer bottleneck forcing paddy back into soaking cycle.",
-    scope:
-      "Steam trap and distribution audit, soak time/temperature curves, dryer plenum balancing, and 5-day operator training program.",
-    outcome:
-      "Stable parboiled paddy output at 8 TPH within 22 days of startup. Milling recovery on parboiled rice reached 68% by month two.",
-    type: "parboiling" as const,
-    highlights: ["Soak curves", "Steam distribution", "Dryer balancing", "Operator training"],
-    metrics: [
-      { label: "Line output", before: "Unstable", after: "8 TPH" },
-      { label: "Startup time", before: "Stalled", after: "22 days" },
-      { label: "Milling recovery", before: "Below target", after: "68%" },
-    ],
-  },
-];
-
-export const machineryGroups = [
-  {
-    title: "Intake & cleaning",
-    description: "Receiving, pre-cleaning, and stone removal before the milling core",
-    items: ["Pre-cleaners & scouring machines", "Destoners & gravity selectors", "Silos, hoppers, spouting & ducting"],
-  },
-  {
-    title: "Milling core",
-    description: "Break, hull, whiten, sift, and grade to finished product spec",
-    items: [
-      "Rubber roll hullers & shellers",
-      "Whiteners, polishers & silky polishers",
-      "Plansifters, purifiers & graders",
-      "Hammer mills & impact detachers",
-      "Dampeners & intensive dampening",
-    ],
-  },
-  {
-    title: "Handling & aspiration",
-    description: "Lift, convey, and exhaust without blockages or overload trips",
-    items: ["Bucket elevators & screw conveyors", "Pneumatic conveying & cyclones"],
-  },
-  {
-    title: "Packaging & control",
-    description: "Bagging lines and automation that hold shift parameters",
-    items: ["Bagging, dosing & packaging lines", "PLC, SCADA & motor control panels"],
-  },
-];
-
-export const machineryCategories = [
-  "Pre-cleaners & scouring machines",
-  "Destoners & gravity selectors",
-  "Rubber roll hullers & shellers",
-  "Whiteners, polishers & silky polishers",
-  "Plansifters, purifiers & graders",
-  "Hammer mills & impact detachers",
-  "Bucket elevators & screw conveyors",
-  "Pneumatic conveying & cyclones",
-  "Bagging, dosing & packaging lines",
-  "PLC, SCADA & motor control panels",
-  "Dampeners & intensive dampening",
-  "Silos, hoppers, spouting & ducting",
 ];
 
 export const faqItems = [
   {
-    question: "How do I know if my plant needs a full assessment or just a single-machine review?",
+    question: "What does Florice cover — consulting only, or machinery and spares too?",
     answer:
-      "Start with a single-machine review if one piece of equipment changed and recovery dropped shortly after — for example, a new whitener or polisher. A full assessment is appropriate when recovery has drifted over months, downtime is rising across multiple stages, or you are planning capex and need a baseline across the entire milling train.",
+      "Three scopes under one roof: Services & Projects (greenfield and brownfield consulting, project management, and operational support), auxiliary machinery (conveyors, elevators, pneumatic lines, spouting, ducting, magnets, and tanks), and wear spare parts for rice, flour, and grain processing lines. See Capabilities on this page, or our Services and Machinery & Spare Parts pages for full detail",
   },
   {
-    question: "Can you help us choose between replacing a whitener train vs. adding a polishing stage?",
+    question: "Are you tied to a specific OEM or equipment supplier?",
     answer:
-      "Yes. We model both options against your paddy variety, target head rice percentage, and available floor space. We compare capex, power load, operator skill required, and expected recovery gain — without tying the recommendation to a specific OEM.",
+      "No — we are vendor-neutral with zero equipment sales commissions. We specify process and layout, compare supplier proposals, track itemised Total Plant Cost Sheets, and source auxiliaries and wear parts against your machine tag and throughput — not to push one brand",
   },
   {
-    question: "We want to increase capacity from 8 TPH to 12 TPH. What should we plan first?",
+    question: "What auxiliary machinery can you supply?",
     answer:
-      "Begin with intake, cleaning, and hulling capacity — bottlenecks often appear upstream of the whitener. We review silo draw rates, elevator capacities, aspiration loads, and utility headroom before specifying new milling equipment. A phased layout plan helps you upgrade without a full shutdown.",
+      "Belt and screw conveyors, bucket elevators, pneumatic conveying lines with cyclones, airlocks, and diverter gates, spouting, ducting, aspiration components, industrial magnets, storage tanks, hoppers, and custom-fabricated vessels. If your machine is not listed on our Machinery & Spare Parts page, reach out — we will arrange it",
   },
   {
-    question: "Do you work with our existing equipment supplier, or do you specify independently?",
+    question: "How do you confirm a spare part fits before dispatch?",
     answer:
-      "We specify independently and can review proposals from your preferred suppliers. Our role is to verify that equipment capacity, installation clearance, and process fit match your grain and throughput — not to sell machines.",
+      "Share machine manufacturer, model, TPH rating, and photos of the worn part or nameplate. We cross-check dimensions and material spec against our catalogue — cleaning and separator spares, whitener and polisher screens, plansifter frames, elevator buckets, pneumatic components, and more — and confirm fit before you order",
   },
   {
-    question: "How long does a typical plant assessment take on site?",
+    question: "Our part is not in your online catalogue. Can you still source it?",
     answer:
-      "Most rice and flour mill assessments run 3–5 days on site: one day for walk-through and data collection, one to two days for machine-level checks and operator interviews, and one day for preliminary findings. A written report with prioritized actions follows within one to two weeks.",
+      "Yes — most requests start that way. Send part numbers, nameplate photos, and operating hours since last change. We identify compatible OEM, aftermarket, or workshop-fabricated options, quote itemised pricing and lead time, and dispatch only once fit is confirmed",
   },
   {
-    question: "Can you support commissioning after new equipment is installed?",
+    question: "When should we request a full plant assessment vs focusing on one machine?",
     answer:
-      "Yes. Commissioning support includes pre-start mechanical checks, aspiration balancing, parameter setting during run-in, operator training, and verification that recovery and downtime targets hold over the first production cycles.",
+      "Single-machine review when one swap or setting change caused a sudden recovery or downtime shift — for example a whitener screen change or pneumatic choke. Full assessment when yield has drifted over months, stops are rising across multiple stages, or you are planning capex and need a baseline across the milling train",
   },
   {
-    question: "We are modernizing an old pneumatic conveying system. Is remote review enough to start?",
+    question: "Can you support greenfield or brownfield projects end to end?",
     answer:
-      "Remote review works for an initial scope if you share layout drawings, duct routes, blockage history, and motor load data. On-site duct velocity measurement and cyclone inspection are usually needed before final specifications — especially on flour mill break systems where ash drift is a risk.",
+      "Yes — six-phase project management from TEFR and layout through erection, fabrication, startup, and operational handover. Core sectors include rice, flour, pulses, value-added processing, and logistics. On running plants we also offer audits, retrofits, contract mill operation, maintenance support, and operator training",
   },
   {
-    question: "What information should we send before requesting a consultation?",
+    question: "What should we send before requesting a consultation or parts quote?",
     answer:
-      "Include plant type (rice, wheat, parboiling), rated capacity (TPH/TPD), main grain variety, current recovery or extraction figures, and a brief description of the problem or upgrade goal. Shift logs or monthly production reports accelerate our initial scope proposal.",
+      "For consulting — plant type (rice, wheat, pulses), rated capacity, main variety, current recovery or extraction, and your upgrade or breakdown goal. For machinery or spares — equipment type or part category, manufacturer or model, quantity, and whether this is a breakdown, planned shutdown, or new installation. Shift logs and layout sketches speed up our response",
   },
 ];
 
-export const brochurePoints = [
-  "Plant assessment and recovery audit methodology",
-  "Machinery selection and vendor-neutral specification process",
-  "Rice, wheat, parboiling, and modernization project scope",
-  "Commissioning support and troubleshooting response format",
-  "Spare parts coordination and fabricated structures supply",
+export type CapabilityGroup = {
+  id: string;
+  eyebrow: string;
+  title: string;
+  href: string;
+  items: string[];
+};
+
+export const capabilityGroups: CapabilityGroup[] = [
+  {
+    id: "services",
+    eyebrow: "Services & Projects",
+    title: "Consulting, project management & operational support",
+    href: "/services",
+    items: [
+      "Greenfield, brownfield & modernisation — feasibility through commissioning",
+      "Core sectors: rice, flour, pulses, value-added processing, logistics & agro products",
+      "Six-phase project management from TEFR and layout to erection, fabrication & startup",
+      "Operational support: contract mill operation, audits, retrofits, maintenance & training",
+      "Total Plant Cost Sheets and vendor-neutral CAPEX tracking before procurement",
+    ],
+  },
+  {
+    id: "machinery",
+    eyebrow: "Auxiliary Machinery",
+    title: "Material handling & plant auxiliaries",
+    href: "/spare-parts#machinery-lines",
+    items: [
+      "Belt conveyors, screw conveyors & bucket elevators",
+      "Pneumatic conveying lines with cyclones, airlocks & diverter gates",
+      "Spouting, ducting, aspiration systems & industrial magnets",
+      "Storage tanks, hoppers & custom-fabricated vessels",
+      "Machine not listed — reach out and we will arrange it",
+    ],
+  },
+  {
+    id: "spare-parts",
+    eyebrow: "Spare Parts",
+    title: "Wear parts for rice, flour & grain processing lines",
+    href: "/spare-parts",
+    items: [
+      "Cleaning, separator, whitener, polisher, huller & roller mill spares",
+      "Plansifter frames, mesh, sieve cleaners & wheat preparation parts",
+      "Elevator buckets, belts, screw flights, chain scrapers & pneumatic components",
+      "Spouting, pipe fittings, filter sleeves, rubber parts & bearings",
+      "Part not in catalogue — send nameplate photos and we confirm fit before dispatch",
+    ],
+  },
 ];
 
 export const aboutCredentials = [

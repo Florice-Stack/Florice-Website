@@ -5,7 +5,7 @@ import Reveal from "@/components/ui/Reveal";
 const areas = [
   {
     icon: Factory,
-    title: "Services",
+    title: "Services & Projects",
     href: "/services",
     description: "Assessments, machinery specs, optimization, commissioning",
   },

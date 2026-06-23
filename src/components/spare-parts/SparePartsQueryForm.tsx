@@ -13,7 +13,7 @@ import {
 const plantTypeLabels: Record<string, string> = {
   rice: "Rice mill",
   wheat: "Wheat / flour mill",
-  parboiling: "Parboiling unit",
+  pulses: "Pulse / lentil plant",
   both: "Rice and flour",
   other: "Other grain processing",
 };
@@ -243,7 +243,7 @@ export default function SparePartsQueryForm() {
             <option value="">Select plant type</option>
             <option value="rice">Rice mill</option>
             <option value="wheat">Wheat / flour mill</option>
-            <option value="parboiling">Parboiling unit</option>
+            <option value="pulses">Pulse / lentil plant</option>
             <option value="both">Rice and flour</option>
             <option value="other">Other grain processing</option>
           </select>

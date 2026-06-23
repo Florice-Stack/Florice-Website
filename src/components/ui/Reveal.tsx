@@ -42,7 +42,7 @@ export default function Reveal({ children, className, delay = 0, as: Tag = "div"
       ref={ref}
       className={cn(
         "motion-safe:transition-all motion-safe:duration-700 motion-safe:ease-out",
-        visible ? "motion-safe:translate-y-0 motion-safe:opacity-100" : "motion-safe:translate-y-7 motion-safe:opacity-0",
+        visible ? "motion-safe:opacity-100 motion-safe:translate-y-0" : "motion-safe:opacity-0 motion-safe:max-sm:translate-y-0 motion-safe:translate-y-7",
         className,
       )}
       style={{ transitionDelay: visible ? `${delay}ms` : "0ms" }}

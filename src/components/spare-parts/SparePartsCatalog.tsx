@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import SparePartsClosingCta from "@/components/spare-parts/SparePartsClosingCta";
 import { type SparePartCategory } from "@/lib/content";
 import { sectionBandClass } from "@/lib/cn";
@@ -39,31 +38,33 @@ export default function SparePartsCatalog({ categories, bandOffset = 0 }: SpareP
                   </ul>
                 </div>
 
-                <div className="card-surface">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-olive">Parts we coordinate</p>
-                  <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                    {category.parts.map((part) => (
-                      <li key={part} className="flex gap-2 text-sm text-charcoal">
-                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-olive" aria-hidden />
-                        {part}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="space-y-6">
+                  <div className="card-surface">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-olive">Parts we supply</p>
+                    <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                      {category.parts.map((part) => (
+                        <li key={part} className="flex gap-2 text-sm text-charcoal">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-olive" aria-hidden />
+                          {part}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
                   {category.images && category.images.length > 0 ? (
-                    <div className="mt-6 grid gap-4 border-t border-[var(--border)] pt-6 sm:grid-cols-2">
+                    <div className="grid gap-4 sm:grid-cols-2">
                       {category.images.map((image) => (
                         <figure
                           key={image.src}
                           className="interactive-media overflow-hidden rounded-xl border border-[var(--border)] bg-white motion-safe:transition-all motion-safe:duration-200"
                         >
-                          <div className="relative aspect-[4/3]">
+                          <div className="relative aspect-[4/3] bg-ivory-muted/30">
                             <Image
                               src={image.src}
                               alt={image.alt}
                               fill
-                              className="object-contain p-3"
-                              sizes="(max-width: 640px) 100vw, 280px"
+                              className="object-contain p-4"
+                              sizes="(max-width: 640px) 100vw, 400px"
                             />
                           </div>
                           <figcaption className="border-t border-[var(--border)] bg-white px-3 py-2.5 text-center text-[11px] leading-snug text-charcoal-muted">

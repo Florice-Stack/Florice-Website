@@ -20,7 +20,7 @@ const CATALOG_BAND_OFFSET = 3;
 export const metadata: Metadata = {
   title: "Machinery & Spare Parts",
   description:
-    "Complete milling and processing machinery — flour mills, rice mills, pulse and besan plants — plus spare parts for whiteners, polishers, sifters, belts, and mill consumables.",
+    "Auxiliary machinery — belt and screw conveyors, bucket elevators, pneumatic lines, spouting, ducting, magnets, and tanks — plus a full spare parts catalogue for rice, flour, and grain mills",
 };
 
 export default function SparePartsPage() {
@@ -45,6 +45,9 @@ export default function SparePartsPage() {
               <Link href="/spare-parts/quote" className="btn btn-primary">
                 {sparePartsClosingCta.sparePartsButton}
               </Link>
+              <Link href="#machinery-lines" className="btn btn-outline">
+                View auxiliary machinery
+              </Link>
             </div>
           </Reveal>
         </div>
@@ -63,7 +66,11 @@ export default function SparePartsPage() {
             </p>
           </Reveal>
           <Reveal delay={60} className="mt-10">
-            <MachineryProductsGrid products={machineryProducts} />
+            <MachineryProductsGrid
+              products={machineryProducts}
+              notListedNote={machineryIntro.notListedNote}
+              notListedCta={machineryIntro.notListedCta}
+            />
           </Reveal>
         </div>
       </section>
@@ -74,7 +81,8 @@ export default function SparePartsPage() {
             <p className="eyebrow">Spare parts catalogue</p>
             <h2 className="text-2xl font-display sm:text-3xl">Wear parts and consumables by machine type</h2>
             <p className="mt-3 max-w-3xl text-sm text-charcoal-muted sm:text-base">
-              Browse common categories below — or send photos and part numbers for items not listed.
+              12 categories covering cleaning, milling, sifting, conveying, pneumatic, spouting, aspiration, and power
+              transmission — send photos and part numbers for items not listed
             </p>
           </Reveal>
         </div>
